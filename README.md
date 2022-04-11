@@ -2,4 +2,4 @@
 
 ### 默认文档`齐澍鹤`
 
-* [ts.json](https://twilight-studio.github.io/TXT/ts.json)
+* [ts.json](https://twilight-studio.github.io/txt/ts.json)
