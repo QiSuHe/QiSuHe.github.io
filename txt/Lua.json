@@ -1,0 +1,1725 @@
+【官方群开始】
+【群名】官方群（反馈交流群）】
+
+【群号】740254369】
+
+【官方群结束】
+
+【版本更新开始】
+【最新版本】1.1.0】
+【强制更新】否】
+【更新介绍】
+
+无
+
+更多内容请加群查看，欢迎五湖四海的朋友进群畅聊；
+更多更新请自主摸索，感谢您对暮光工作室的支持。
+】
+【更新链接】https://wwa.lanzoui.com/io6f6spfale】
+
+【版本更新结束】
+
+
+
+
+【标题】#000007# 移动开发 横向滑动 与 纵向滑动】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000007#开】
+【名称】横向滑动 与 纵向滑动】
+【讲师】齐澍鹤】
+【内容】本期教程可能需要安卓App：ALua助手
+
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+
+纵向滑动
+
+当 线性为基础的布局内进行多个布局 当长度大于手机屏幕长度时 超出的部分显示不出来
+
+我们就可以用到 纵向滑动
+
+创建一个线性基础
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+在线性基础内放上一个纵向滚动控件
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    ScrollView,--纵向滚动
+    layout_width='fill';--宽
+    layout_height='fill';--高
+    {
+      LinearLayout;
+      orientation='vertical';--重力属性
+      layout_width='fill';--布局宽度
+      layout_height='fill';--布局高度
+    };
+    --布局在这里写
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+注 纵向滚动不可作为布局的基础 需要在纵向滚动控件之上装上一个控件用于滑动显示
+
+当 纵向滚动控件内的内容＜屏幕长度时 该纵向滑动控件不可滑动 若 纵向滑动控件内容＞屏幕长度时 该纵向滚动控件会滑动显示布局内容 默认显示出滚动条
+
+横向滑动控件一样
+
+{
+  HorizontalScrollView,--横向滚动
+  layout_width='';--宽
+  layout_height='';--高
+  --布局在这里写
+};
+
+需要隐藏纵向或横向滑动的滚动条时 在控件内加上
+
+horizontalScrollBarEnabled=false;--隐藏横向滚动条
+
+verticalScrollBarEnabled=false;--隐藏纵向滚动条
+
+本期讲解结束
+
+
+】
+【#000007#关】
+
+
+【标题】#000006# 移动开发 适配器】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000006#开】
+【名称】适配器】
+【讲师】齐澍鹤】
+【内容】本期教程可能需要安卓App：ALua助手
+
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+当视图内存在多个相同的布局 仅 数据不相同的时候 一直用布局写的话工程量繁杂 这时候就可以用到适配器
+
+适配器的定义 适配器控件主要包括(ListView,GridView,Spinner,ExpandableList等)
+
+先创建一个布局
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    ListView;--列表视图
+    layout_width='fill';--布局宽度
+    layout_height='fill';--布局高度
+    DividerHeight='1px';--设置分隔线宽度,0表示无分隔线
+    background='#00000000';--布局背景颜色(或图片路径)
+    id="list";
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+列表视图 仅一行
+
+网格控件 可以一列多行
+
+再创建一个表 用于装数据
+
+标题={"奥特曼","蝙蝠侠","超人","蜘蛛侠"}
+
+再创建一个适配器的布局
+
+item={
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    TextView;--文本控件
+    layout_width='-1';--文本宽度
+    layout_height='50dp';--文本高度
+    gravity='center';--重力属性
+    textColor='#000000';--文字颜色
+    text='';--显示的文字
+    textSize='15sp';--文字大小
+    id="标题";
+  };
+};
+
+绑定适配器
+
+data={}--数据
+adp=LuaAdapter(activity,data,item)
+list.Adapter=adp
+
+然后写一个循环将表内数据添加到适配器内
+
+for i=1,#标题 do
+  adp.add{标题=标题[i]}
+end
+
+以下为完整的适配器案例 （可以复制到助手内调试运行）
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    ListView;--列表视图
+    layout_width='fill';--布局宽度
+    layout_height='fill';--布局高度
+    DividerHeight='1px';--设置分隔线宽度,0表示无分隔线
+    background='#00000000';--布局背景颜色(或图片路径)
+    id="list";
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+item={
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    TextView;--文本控件
+    layout_width='-1';--文本宽度
+    layout_height='50dp';--文本高度
+    gravity='center';--重力属性
+    textColor='#000000';--文字颜色
+    text='';--显示的文字
+    textSize='15sp';--文字大小
+    id="标题";
+  };
+};
+
+标题={"奥特曼","蝙蝠侠","超人","蜘蛛侠"}
+
+data={}--数据
+adp=LuaAdapter(activity,data,item)
+list.Adapter=adp
+
+for i=1,#标题 do
+  adp.add{标题=标题[i]}
+end
+
+list.onItemClick=function(parent,v,pos,id)
+  local 标题=v.Tag.标题.text
+
+  print(标题)
+
+end
+
+以上的适配器点击后事件为打印表内数据
+
+如果想要每个标题不一样的点击事件 可以以下这样写
+
+list.onItemClick=function(parent,v,pos,id)
+  local 标题=v.Tag.标题.text
+  if 标题=="蜘蛛侠" then
+    print("我是蜘蛛侠")
+   elseif 标题=="蝙蝠侠" then
+    print("我是蝙蝠侠耶耶耶")
+   elseif 标题=="奥特曼" then
+    print("你是个锤子")
+  end
+end
+
+适配器的点击事件为判断文本内容的方式进行事件
+
+本期讲解结束
+
+
+】
+【#000006#关】
+
+
+
+【标题】#000005# 移动开发 常用控件 与 控件常用属性】
+【类型】文章教程】
+【作者】来源于网络】
+【#000005#开】
+【名称】常用控件 与 控件常用属性】
+【讲师】来源于网络】
+【内容】
+《线性布局》
+{
+  LinearLayout,--线性布局
+  orientation="vertical",--布局方向
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},--线性布局结束
+
+《帧布局》
+{
+  FrameLayout,--帧布局
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},--帧布局结束
+
+《相对布局》
+{
+  RelativeLayout,--相对布局
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},--相对布局结束
+
+《绝对布局》
+{
+  AbsoluteLayout,--绝对布局
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},--绝对布局结束
+
+《表格布局》
+{
+  TableLayout,--表格布局
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},--表格布局结束
+
+《纵向滑动控件》
+{
+  ScrollView,--纵向滑动控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  overScrollMode=View.OVER_SCROLL_NEVER,--隐藏圆弧阴影
+  verticalScrollBarEnabled=false,--隐藏纵向滑条
+  {
+    LinearLayout,--线性布局
+    orientation="vertical",--布局方向
+    layout_width="fill",--布局宽度
+    layout_height="fill",--布局高度
+  },--线性布局结束
+},--纵向滑动控件结束
+
+《横向滑动控件》
+{
+  HorizontalScrollView,--横向滑动控件
+  layout_width="fill",--布局宽度
+  layout_height="wrap",--布局高度
+  overScrollMode=View.OVER_SCROLL_NEVER,--隐藏圆弧阴影
+  horizontalScrollBarEnabled=false,--隐藏横向滑条
+  {
+    LinearLayout,--线性布局
+    orientation="horizontal",--布局方向
+    layout_width="fill",--布局宽度
+    layout_height="fill",--布局高度
+    gravity="left|center",--重力居左｜置中
+  },--线性布局结束
+},--横向滑动控件结束
+
+
+《文本框控件》
+{
+  TextView,--文本框控件
+  text="文本内容",--文本内容
+  textSize="15sp",--文本大小
+  textColor="#333333",--文本颜色
+  --singleLine=true,--禁止换行输入
+},
+
+《纽扣控件》
+{
+  Button,--纽扣控件
+  layout_width="wrap",--布局宽度
+  layout_height="wrap",--布局高度
+  padding="2dp",--布局填充
+  text="纽扣名称",--文本内容
+},
+
+《图片框控件》
+{
+  ImageView,--图片框控件
+  layout_width="56dp",--布局宽度
+  layout_height="25dp",--布局高度
+  src="icon.png",--视图路径
+},
+
+《圆形图片控件》
+{
+  CircleImageView,--圆形图片控件
+  layout_width="60dp",--布局宽度
+  layout_height="60dp",--布局高度
+  src="icon.png",--视图路径
+},
+
+《卡片框控件》
+{
+  CardView,--卡片框控件
+  layout_width="80dp",--布局宽度
+  layout_height="80dp",--布局高度
+  cardElevation="2dp",--卡片提升
+  cardBackgroundColor="#ffffff",--卡片背景色
+  radius="10dp",--圆角半径
+},--卡片框控件结束
+
+《编辑框控件》
+{
+  EditText,--编辑框控件
+  layout_width="fill",--布局宽度
+  layout_height="wrap",--布局高度
+  hint="输入内容",--编辑框内容为空时提示
+  textSize="15sp",--文本大小
+  singleLine=true,--禁止换行输入
+  id="edit",--控件ID
+},
+
+《浏览器控件》
+{
+  LuaWebView,--浏览器控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  id="llq",--控件ID
+},
+
+《视频控件》
+{
+  VideoView,--视频控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  id="shiping",--控件ID
+},
+
+《水平分割线》
+水平分割线={
+  TextView,--水平分割线
+  layout_width="fill",--布局宽度
+  layout_height="1px",--布局高度
+  layout_gravity="center",--重力居中
+  backgroundColor="#ffbebebe",--背景色
+}
+
+《垂直分割线》
+垂直分割线={
+  TextView,--垂直分割线
+  layout_width="1px",--布局宽度
+  layout_height="fill",--布局高度
+  layout_gravity="center",--重力居中
+  backgroundColor="#ffbebebe",--背景色
+}
+
+《针角分割线》
+{
+  CardView,--针角分割线
+  layout_width="190%w",--布局宽度
+  layout_height="1px",--布局高度
+  layout_gravity="center",--重力居中
+  cardBackgroundColor="#FFBEBEBE",--卡片背景色
+  cardElevation="0dp",--卡片提升
+  radius="200dp",--圆角半径
+},
+
+《进度条控件》
+{
+  ProgressBar,--进度条控件
+  layout_width="60dp",--布局宽度
+  layout_height="60dp",--布局高度
+},
+
+《单选控件》
+{
+  RadioGroup,--单选控件
+  orientation="vertical",--布局方向
+  layout_width="fill",--布局宽度
+  layout_height="wrap",--布局高度
+  gravity="left|center",--重力居左｜置中
+  {
+    RadioButton,--单选按钮控件
+    layout_width="fill",--布局宽度
+    layout_height="wrap",--布局高度
+    text="文本内容",--文本内容
+    --checked=true,--是否选中
+  },
+},--单选控件结束
+
+《复选框控件》
+{
+  CheckBox,--复选框控件
+  layout_width="fill",--布局宽度
+  layout_height="wrap",--布局高度
+  text="文本内容",--文本内容
+  checked=true,--是否选中
+},
+
+《开关控件》
+{
+  Switch,--开关控件
+  switchMinWidth="50%w",--开关最小宽度
+  switchPadding="10%w",--设置开关与文字的空白距离
+  text="文本内容",--文本内容
+  textSize="16sp",--文本大小
+  textColor="#ff0000",--文本颜色
+  textOff="开",--设置开关checked的文字
+  textOn="关",--设置开关关闭时的文字  
+  showText=true,--设置是否显示开关上的文字（API21及以上）
+  id="kaig",--控件ID
+},
+
+《页面视图控件》
+{
+  PageView,--页面视图控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  layout_weight="1",--重力分配
+  id="huadong",--控件ID
+  pages={
+    页面名称1,
+    页面名称2,
+    页面名称3,
+  },--页面控件结束
+},--页面视图控件结束
+
+《列表视图控件》
+{
+  ListView,--列表视图控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  dividerHeight="1",--分割线高度
+  verticalScrollBarEnabled=false,--隐藏滑条
+},
+
+《网格控件》
+{
+  GridView,--网格控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  gravity="center",--重力居中
+  numColumns="3",--设置列数
+  overScrollMode="2",--去除滑动圆弧形
+  verticalScrollBarEnabled=false,--隐藏滑条
+  id="list",--控件ID
+},
+
+《堆栈视图控件》
+{
+  StackView,--堆栈视图控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},
+
+《表面视图控件》
+{
+  SurfaceView,--表面视图控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+},
+
+《多级列表控件》
+{
+  ExpandableListView,--多级列表控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  dividerHeight="0",--去掉分割线，则修改为1
+  verticalScrollBarEnabled=false,--隐藏滑条
+},
+
+《拖动条控件》
+{
+  SeekBar,--拖动条控件
+  layout_width="fill",--布局宽度
+  layout_height="wrap",--布局高度
+  layout_weight="1",--重力分配
+  layout_gravity="center",--重力居中
+},
+
+《查看视图控件》
+{
+  View,--查看视图控件
+  layout_width="fill",--布局宽度
+  layout_height="1px",--布局高度
+},
+
+《按钮控件》
+{
+  ToggleButton,--按钮控件
+  layout_width="40%w",--布局宽度
+  layout_height="50dp",--布局高度
+},
+
+《图片按钮控件》
+{
+  ImageButton,--图片按钮控件
+  layout_width="50dp",--布局宽度
+  layout_height="50dp",--布局高度
+  src="icon.png",--视图路径
+},
+
+《Lua编辑控件》
+{
+  LuaEditor,--lua编辑框控件
+  layout_width="fill",--布局宽度
+  layout_height="fill",--布局高度
+  layout_weight="1",--重力分配
+  id="edit",--控件ID
+},
+
+
+--垂直方向
+orientation="vertical",--垂直方向
+
+--水平方向
+orientation="horizontal",--水平方向
+
+--布局宽度
+layout_width="fill",--布局宽度
+
+--布局高度
+layout_height="fill",--布局高度
+
+--权重值分配
+layout_weight="1",--权重值分配
+
+--重力属性
+gravity="center",--顶：top｜中：center｜左：left｜右：right｜底：bottom
+
+--布局背景
+background="#ffffffff",--布局背景
+
+--控件设置ID
+id="button",--控件ID
+
+--单击事件
+onClick=function()--单击事件
+end,--单击事件 结束
+
+--↹布局边距
+layout_margin="8dp",--布局边距
+
+--∧布局顶距
+layout_marginTop="15dp",--布局顶距
+
+--＜布局左距
+layout_marginLeft="4%w",--布局左距
+
+--＞布局右距
+layout_marginRight="4%w",--布局右距
+
+--∨布局底距
+layout_marginBottom="15dp",--布局底距
+
+--布局填充
+padding="2dp",--布局填充
+
+--重力居顶↑置中
+gravity="top|center",--重力居顶｜置中
+
+--重力居底↓置中
+gravity="bottom|center",--重力居底｜置中
+
+--重力居顶↖置左
+gravity="top|left",--重力居顶｜置左
+
+--重力居顶↗置右
+gravity="top|right",--重力居顶｜置右
+
+--重力居左←置中
+gravity="left|center",--重力居左｜置中
+
+--重力居右→置中
+gravity="right|center",--重力居右｜置中
+
+--重力居左↙置底
+gravity="left|bottom",--重力居左｜置底
+
+--重力居右↘置底
+gravity="right|bottom",--重力居右｜置底
+
+--视图路径
+src="drawable/icon.png",--视图路径
+
+--图片颜色
+colorFilter="#ffffff",--图片颜色
+
+--图片显示类型
+scaleType="fitXY",--图片显示类型：centerCrop
+
+--文本内容
+text="文本内容",--文本内容
+
+--文本大小
+textSize="16sp",--文本大小
+
+--文本颜色
+textColor="#ffffff",--文本颜色
+
+--文本显示类型
+typeface=Typeface.DEFAULT_BOLD,--文本显示类型
+
+--文本可选复制
+textIsSelectable=true,--内容可选复制
+
+--圆角半径
+radius="10dp",--圆角半径
+
+--卡片提升
+cardElevation="12dp",--卡片提升
+
+--阴影层次
+elevation="4dp",--阴影层次
+
+--卡片背景色
+cardBackgroundColor="#ffffff",--卡片背景色
+
+--纽扣背景色
+backgroundColor="#8EC0E4",--背景色
+
+--控件显示/隐藏/不可视
+visibility=8,--不可视4--隐藏8--显示0
+
+--控件透明度
+alpha=0.6,--控件透明度
+
+--开关控件颜色
+填写控件ID.ThumbDrawable.setColorFilter(PorterDuffColorFilter(0xffff0000,PorterDuff.Mode.SRC_ATOP))--开关控件颜色
+
+--进度条颜色
+填写控件ID.IndeterminateDrawable.setColorFilter(PorterDuffColorFilter(0xffff0000,PorterDuff.Mode.SRC_ATOP))--进度条颜色
+
+--隐藏光标
+cursorVisible=false,--false隐藏,true则为显示
+
+--隐藏圆弧阴影
+overScrollMode=View.OVER_SCROLL_NEVER,--隐藏圆弧阴影
+
+--输入法｜Enter键
+imeOptions="actionSearch",--输入法Enter键
+
+--编辑框｜限制最多输入
+maxLength="10",--限制最多输入文字
+
+--编辑框｜只可输入数字
+inputType="number",--设置只可输入数字
+
+--编辑框｜禁止换行输入
+singleLine=true,--禁止换行输入
+
+--编辑框｜隐藏为*号
+password=true,--自动隐藏为*号
+
+--编辑框｜文字过长隐藏
+ellipsize="end",--文字过长自动隐藏
+
+--编辑框｜气泡提示
+error="请输入",--气泡提示
+
+--编辑框｜为空时显示
+hint=" 请输入"--内容为空时显示
+
+--禁止弹出输入法
+focusableInTouchMode=true,--禁止弹出输入法
+
+--禁用编辑框
+focusable=false,--禁用编辑框
+
+--隐藏纵向滑条
+verticalScrollBarEnabled=false,--隐藏纵向滑条
+
+--隐藏横向滑条
+horizontalScrollBarEnabled=false,--隐藏横向滑条
+
+--控件是否可使用
+enabled=false,--是否可使用
+
+--控件是否可点击
+focusable=true,--是否可点击
+
+--调用系统窗口
+fitsSystemWindows=true,--调用系统窗口
+
+
+本期讲解结束
+
+
+】
+【#000005#关】
+
+
+
+【标题】#000004# 移动开发 赋值 与 判断 及 函数】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000004#开】
+【名称】赋值 与 判断 及 函数】
+【讲师】齐澍鹤】
+【内容】本期教程可能需要安卓App：ALua助手
+
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+
+赋值
+
+在布局内 颜色的属性可以用 "#FFFFFFFF" 或者 0xffffffff 来进行设置
+
+但是 如果多个控件的颜色 都是白色 都用以上方法来进行设置 是非常麻烦的
+
+所以 我们可以在布局的上边（.lua文件内）进行颜色的赋值 例如
+
+白色=0xffffffff
+
+在控件中则可以设置
+
+{
+  CardView;--卡片控件
+  layout_margin='';--卡片边距
+  layout_gravity='';--重力属性
+  elevation='';--阴影属性
+  layout_width='';--卡片宽度
+  CardBackgroundColor=白色;--卡片背景颜色
+  layout_height='';--卡片高度
+  radius='';--卡片圆角
+};
+
+则可以设置该卡片控件的颜色为白色 （线性背景不行）
+
+赋值不止可以用来表示颜色
+
+也可以进行赋值数字
+
+同理 在布局之上设置
+
+边距=1
+圆角=10
+
+{
+  CardView;--卡片控件
+  layout_margin=边距;--卡片边距
+  layout_gravity='';--重力属性
+  elevation='';--阴影属性
+  layout_width='';--卡片宽度
+  CardBackgroundColor='';--卡片背景颜色
+  layout_height='';--卡片高度
+  radius=圆角;--卡片圆角
+};
+
+赋值不止可以用在布局表内 也可以用于其他用途
+
+假如 A="李商隐"
+
+作者="作者："..A
+
+print(作者)
+
+打印出来的内容就是 作者：李商隐
+
+也可以结合 本期学习的内容之一 判断 来进行
+
+A=1
+
+B=3
+
+if A>B then
+  print("A比B大")
+ else
+  print("A不比B大")
+end
+
+如果 A 大于 B 则 打印 A比B大
+
+else 是 如果不的意思
+
+如果 A不大于B 则 打印 A不比B大
+
+判断还可以写精细一点
+
+if A>B then
+  print("A大于B")
+ elseif A<B then
+  print("A小于B")
+ elseif A==B then
+  print("A等于B")
+ elseif A<=B then
+  print("A小于或等于B")
+ elseif A>=B then
+  print("A大于或等于B")
+ elseif A~= then
+  print("A不等于B")
+end
+
+也可以结合本次课程的 函数 来进行
+
+function 加法(A,B)
+  return(A+B)
+end
+
+使用函数
+
+答案=加法(10,11)
+
+print(答案)
+
+就会打印出答案
+
+也可以
+
+print(加法(10,11))
+
+也可以打印出答案
+
+同理
+
+设置一个减法函数
+
+function 减法(A,B,C)
+  return (A-B-C)
+end
+
+print(减法(11,3,5))
+
+函数可以各种运用 加减乘除 事件
+
+假如一个横屏的事件如下写法
+
+--横屏
+activity.setRequestedOrientation(0);
+
+则 可以写一个横屏的函数
+
+function 横屏()
+  --横屏
+  activity.setRequestedOrientation(0);
+end
+
+使用它
+
+横屏()
+
+即屏幕横屏
+
+import "android.content.Intent"
+import "android.net.Uri"
+url="http://www.androlua.cn"
+viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
+activity.startActivity(viewIntent)
+
+以上是一个 调用浏览器打开网页 的事件
+
+将它写成一个函数
+
+function 浏览器打开(链接)
+  import "android.content.Intent"
+  import "android.net.Uri"
+  url=链接
+  viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
+  activity.startActivity(viewIntent)
+end
+
+使用它
+
+浏览器打开("http://www.Baidu.com")
+
+则可以调用浏览器打开百度的网页
+
+
+本期讲解结束
+
+】
+【#000004#关】
+
+
+【标题】#000003# 移动开发 编辑框控件 及 点击事件 及 图片控件】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000003#开】
+【名称】编辑框控件 及 点击事件 及 图片控件】
+【讲师】齐澍鹤】
+【内容】本期教程可能需要安卓App：ALua助手
+
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+
+编辑框控件 EditText
+
+作为一个控件 它的写法如下
+
+{
+  EditText;--编辑框控件
+  layout_width='';--编辑框宽度
+  layout_height='';--编辑框高度
+  textSize='';--文字大小
+  hintTextColor='';--提示文字颜色
+  textColor='';--输入文字的颜色
+  Hint='';--设置编辑框为空时的提示文字
+};
+
+
+写入布局内可以这样写(可复制到助手运行测试)
+
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  gravity="center",--重力居中
+  {
+    EditText;--编辑框控件
+    layout_width='90%w';--编辑框宽度
+    layout_height='60dp';--编辑框高度
+    textSize='15sp';--文字大小
+    hintTextColor='#c8000000';--提示文字颜色
+    textColor='#ff000000';--输入文字的颜色
+    Hint='输入内容';--设置编辑框为空时的提示文字
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+
+作为一个文本类控件 可以使用文本控件的一些属性 例如
+
+ellipsize="end";--超出自动隐藏
+
+singleLine=true;--设置单行输入
+
+之类
+
+如果结合点击事件
+
+可以写如下事件
+
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  gravity="center",--重力居中
+  {
+    EditText;--编辑框控件
+    layout_width='90%w';--编辑框宽度
+    layout_height='60dp';--编辑框高度
+    textSize='15sp';--文字大小
+    hintTextColor='#c8000000';--提示文字颜色
+    textColor='#ff000000';--输入文字的颜色
+    Hint='输入内容';--设置编辑框为空时的提示文字
+    id="内容";
+  };
+  {
+    Button;--纽扣控件
+    text='按钮';--要显示的文本
+    textSize='15sp';--文字大小
+    textColor='#FFFFFFFF';--文字颜色
+    backgroundColor='#ff424c50';--纽扣背景颜色
+    layout_width='100dp';--纽扣宽度
+    layout_height='60dp';--纽扣高度
+    layout_marginTop='15dp';--布局顶距
+    id="点击";
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+--上面是一个布局
+
+--输入框控件的id为 内容
+
+--按钮控件的id为 点击
+
+--事件如下
+
+function 点击.onClick()
+  print(内容.Text)
+end
+
+--上面的点击事件打印出了输入框内的文本内容
+
+--如果要点击后替换输入框内的文本内容 则可以向以下写法
+
+function 点击.onClick()
+  内容.setText('替换后的文本内容')--内容,
+end
+
+--这是一个简单的输入框教程
+
+图片控件
+
+{
+  ImageView;--图片控件
+  src='';--图片路径
+  layout_width='';--图片宽度
+  layout_height='';--图片高度
+  scaleType='fitXY';--图片显示类型
+};
+
+图片路径分为 网络图片链接 和 本地图片链接
+
+若手机内的本地路径 /storage/emulated/0/Pictures/Canva/ 内 存在一个名为 ceshi.png 的图片 要插入到图片控件内进行显示 则 可以写成
+
+{
+  ImageView;--图片控件
+  src='/storage/emulated/0/Pictures/Canva/ceshi.png';--图片路径
+  layout_width='100dp';--图片宽度
+  layout_height='100dp';--图片高度
+  scaleType='fitXY';--图片显示类型
+};
+
+图片的显示类型分为（比较常用的 其他的可以百度里进行搜索）
+
+fitXY 从中间向四周填充（显示为图片被控件长宽挤压后的比例 会进行压缩）
+
+centerCrop 从中间向四周扩散（显示为图片原本的长宽比例 不会进行压缩）
+
+假如 图片控件 是一个图标 图标的线条之外都是透明的背景 若想改变图标线条的颜色而不改变图片的背景 可以写如下
+
+colorFilter="#ffffff",--图片滤镜
+
+每个软件都有自带的一个默认或制作的图标 （icon） 我们可以写一个例子
+
+图片控件运用例子如下（可复制到助手内运行测试）
+
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  gravity="center",--重力居中
+  {
+    --一个滤镜为绿色的图标
+    --将图片颜色注释后即能看到运行后的软件图标
+    ImageView;--图片控件
+    src='icon.png';--图片路径
+    layout_width='25dp';--图片宽度
+    layout_height='25dp';--图片高度
+    scaleType='fitXY';--图片显示类型
+    colorFilter="#ff00f764",--图片颜色
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+
+本期讲解结束
+
+】
+【#000003#关】
+
+
+【标题】#000002# 移动开发 卡片控件 与 控件在父控件中的位置】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000002#开】
+【名称】卡片控件 与 控件在父控件中的位置】
+【讲师】齐澍鹤】
+【内容】本期教程需要使用的安卓App：ALua助手
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+
+卡片控件
+
+可作为控件容纳其他的控件 区别于线性的是 卡片控件内的控件位置需要自己来设置 否则默认左上角
+
+{
+  CardView;--卡片控件
+  layout_margin='';--卡片边距
+  layout_gravity='';--重力属性
+  elevation='';--阴影属性
+  layout_width='';--卡片宽度
+  CardBackgroundColor='';--卡片背景颜色
+  layout_height='';--卡片高度
+  radius='';--卡片圆角
+};
+
+卡片边距 该卡片的四条边与其父控件各条边的距离 也可以删除后用 顶距 低距 左距 右距 进行单一边的距离设置
+
+
+重力属性 该卡片在其父控件中的位置
+
+
+阴影属性 该卡片的背景之下的黑色阴影强度设定
+
+
+卡片宽度 与 卡片高度 设置该卡片的 高度 宽度
+
+
+卡片背景颜色 区别于 背景颜色 卡片是一个控件 线性是一个框架 框架里的控件颜色就是卡片背景颜色
+
+
+卡片圆角 该卡片在视图内的四个角的弧度 若卡片圆角 等于或大于 卡片高度的一半 则 该卡片角度为一个圆
+
+
+注 卡片需要存放于拥有框架的视图内才能正常运行
+
+
+例子 （可复制到助手运行调试）
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+  {
+    --一个蓝色的卡片 可例子修改控件数据进行区别
+    CardView;--卡片控件
+    layout_margin='10dp';--卡片边距
+    layout_gravity='center';--重力属性
+    elevation='10dp';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#ff3eede7';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='10dp';--卡片圆角
+
+  };
+
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+控件在父控件中的位置
+
+当认识了 线性布局 及 卡片控件 之后 便可以自定义布局了
+
+线性内的布局
+
+layout_gravity='';--子控件在父控件中的对齐方式
+
+gravity="",--父控件中的子控件重力方式
+
+看到重力 便可以分为
+
+wrap 自适应 默认为左上
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='wrap';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+bottom 居底
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='bottom';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+left 居左上
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='left';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+right 居右上
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='right';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+center 居中
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='center';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+当然 也可以进行组装
+
+left|center 居左中
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='left|center';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+right|center 居右中
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='right|center';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+bottom|center 居底中
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --该卡片为示例卡片
+      CardView;--卡片控件
+      layout_gravity='bottom|center';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#ffff3300';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+线性内的重力略有不同
+
+若父框架线性是 vertical 从上到下布局
+则 子控件在父控件中 left 居左 right 居右 bottom 可能无效（因线性控件中是一层一层进行布局）
+
+卡片控件则可以 任意位置进行叠加 且 若卡片中两个子控件位置重叠 写在布局表下方的控件 会将布局表上的控件进行覆盖 使其不可见
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  {
+    CardView;--卡片控件
+    layout_gravity='center';--重力属性
+    elevation='0';--阴影属性
+    layout_width='fill';--卡片宽度
+    CardBackgroundColor='#00000000';--卡片背景颜色
+    layout_height='fill';--卡片高度
+    radius='0';--卡片圆角
+    {
+      --红色卡片
+      CardView;--卡片控件
+      layout_gravity='center';--重力属性
+      elevation='0';--阴影属性
+      layout_width='50%w';--卡片宽度
+      CardBackgroundColor='#fff05654';--卡片背景颜色
+      layout_height='50%w';--卡片高度
+      radius='0';--卡片圆角
+    };
+    {
+      --绿色卡片
+      CardView;--卡片控件
+      layout_gravity='right';--重力属性
+      elevation='0';--阴影属性
+      layout_width='60%w';--卡片宽度
+      CardBackgroundColor='#ff21a675';--卡片背景颜色
+      layout_height='70%h';--卡片高度
+      radius='0';--卡片圆角
+    };
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+
+本期讲解结束
+
+
+】
+【#000002#关】
+
+【标题】#000001# 移动开发 布局概念 主要布局视图的运行】
+【类型】文章教程】
+【作者】齐澍鹤】
+【#000001#开】
+【名称】布局概念 主要布局视图的运行】
+【讲师】齐澍鹤】
+【内容】本期教程可能需要安卓App：ALua助手
+
+
+您也可以前往在 https://b23.tv/UlpXS2f 内学习观看相关教程
+
+
+应用的视图（显示在用户眼中的布局）分为三个
+
+
+第一是布局的奠定 通常用layout命名 作为布局的赋值类
+
+例 layout=
+
+
+第二是布局 通常为一个aly文件或直接在Lua文件内直接写入
+
+例
+
+{
+  LinearLayout;
+  orientation='';--重力属性
+  layout_width='';--布局宽度
+  layout_height='';--布局高度
+  background='';--布局背景颜色(或者图片路径)
+};
+
+
+第三个是视图 把写好的布局文件添加到视图内显示出来
+
+例 activity.setContentView(loadlayout(layout))
+
+
+一个完整的布局例子如下（可复制到布局助手内运行测试）
+
+例
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+完整的布局例子解释：
+
+布局奠定的命名必须与添加到视图内的命名一致（添加到视图内的布局必须存在 否则会报错）
+
+
+布局
+
+Android 中 常用 的5大布局方式有以下几种：
+
+线性布局（LinearLayout）：按照垂直或者水平方向布局的组件。
+
+帧布局（FrameLayout）：组件从屏幕左上方布局组件。
+
+表格布局（TableLayout）：按照行列方式布局组件。
+
+相对布局（RelativeLayout）：相对其它组件的布局方式。
+
+绝对布局（AbsoluteLayout）：按照绝对坐标来布局组件。
+
+个人用的最多的是线性布局
+
+
+
+线性布局的概念
+
+
+
+线性布局 分为
+
+从上到下布局 vertical
+
+从左到右布局 horizontal
+
+线性布局的背景颜色不能使用0x开头的颜色代码
+
+只能以#开头的颜色代码使用
+
+以下为线性布局的 上下布局 和 左右布局 的示例（可复制去助手使用）
+
+上下布局
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+  {
+    --绿色
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='-1';--布局宽度
+    layout_height='56dp';--布局高度
+    background='#ff0aa344';--布局背景颜色(或者图片路径)
+  };
+  {
+    --红色
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='50%w';--布局宽度
+    layout_height='56dp';--布局高度
+    background='#ffdc3023';--布局背景颜色(或者图片路径)
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+左右布局
+
+layout=
+{
+  LinearLayout;
+  orientation='horizontal';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+  {
+    --黄色
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='56dp';--布局宽度
+    layout_height='-1';--布局高度
+    background='#ffffc64b';--布局背景颜色(或者图片路径)
+  };
+  {
+    --紫色
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='56dp';--布局宽度
+    layout_height='50%h';--布局高度
+    background='#b44c97';--布局背景颜色(或者图片路径)
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+
+布局单位
+
+布局单位常用 : dp px sp 或者直接用纯数字来表示 例 1 10 30 50 等
+
+%h （屏幕高度的百分之）
+
+%w （屏幕宽度的百分之）
+
+也或者 fill （父控件的全部 或者屏幕的全部）
+
+fill 也可以用 -1 来表示
+
+wrap （自适应 控件有多大它就会有多大 超出父控件或屏幕后依旧显示 只是显示的不全）
+
+wrap 也可以用 -2 来表示
+
+以下为使用的示例（可复制到助手运行）
+
+layout=
+{
+  LinearLayout;
+  orientation='vertical';--重力属性
+  layout_width='fill';--布局宽度
+  layout_height='fill';--布局高度
+  background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+  {
+    --蓝色 宽度为fill -1 高度为20dp
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='-1';--布局宽度
+    layout_height='20dp';--布局高度
+    background='#ff44cef6';--布局背景颜色(或者图片路径)
+  };
+  {
+    --红色 宽度为屏幕的一半 50%w 高度为30dp
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='50%w';--布局宽度
+    layout_height='30dp';--布局高度
+    background='#ffff2121';--布局背景颜色(或者图片路径)
+  };
+  {
+    --绿色的细线 宽度为fill -1 高度为1px
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='-1';--布局宽度
+    layout_height='1px';--布局高度
+    background='#ff009788';--布局背景颜色(或者图片路径)
+  };
+  {
+    --灰色的柱体 宽度20dp 高度10%h
+    LinearLayout;
+    orientation='vertical';--重力属性
+    layout_width='20dp';--布局宽度
+    layout_height='10%h';--布局高度
+    background='#ff50616d';--布局背景颜色(或者图片路径)
+  };
+};
+activity.setContentView(loadlayout(layout))--布局视图
+
+
+本期讲解结束
+
+】
+【#000001#关】
