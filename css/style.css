@@ -42,6 +42,7 @@ a {
 }
 
 .nav .title .logo {
+    line-height: 10vh;
     width: 69px;
     height: 69px;
     margin: auto 0;
@@ -218,10 +219,6 @@ footer {
 
     .nav .title {
         margin: auto 41px;
-    }
-    
-    .nav .title .logo img {
-        display: none;
     }
 
     .nav .anchor {
