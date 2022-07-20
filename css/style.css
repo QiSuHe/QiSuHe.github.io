@@ -219,6 +219,10 @@ footer {
     .nav .title {
         margin: auto 41px;
     }
+    
+    .nav .title .logo img {
+        display: none;
+    }
 
     .nav .anchor {
         display: none;
