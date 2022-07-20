@@ -54,10 +54,12 @@ a {
 }
 
 .nav .title p {
+    line-height: 10vh;
     font-size: 50px;
     font-family: 'ZCOOL KuaiLe', cursive;
     user-select: none;
     margin-left: 15px;
+    margin: auto 0;
 }
 
 .nav .anchor {
