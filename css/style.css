@@ -217,18 +217,7 @@ footer {
 @media screen and (max-width: 999px) {
 
     .nav .title {
-        margin: auto 20px;
-    }
-
-    .nav .title .logo {
-        width: 41px;
-        height: 41px;
-        margin: auto 0;
-    }
-
-    .nav .title p {
-        font-size: 29px;
-        margin-left: 10px;
+        margin: auto 41px;
     }
 
     .nav .anchor {
@@ -238,8 +227,8 @@ footer {
 
     .main .applogo {
         display: block;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         margin: 20px auto;
     }
 
@@ -249,24 +238,18 @@ footer {
     }
 
     .main .left .content .name {
-        font-size: 29px;
+        font-size: 36px;
     }
 
     .main .left .content .introduce {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .main .left .content .vesion {
-        width: 200px;
-        font-size: 15px;
         margin: 5px auto;
     }
 
     .main .left .content .down {
-        border-radius: 19px;
-        width: 200px;
-        height: 69px;
-        font-size: 19px;
         margin: 25px auto 10px
     }
 
