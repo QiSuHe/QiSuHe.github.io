@@ -11,7 +11,7 @@ const vm = new Vue({
                     url: 'https://wwa.lanzoui.com/itWwd05exy7e'
                 },
                 {
-                    name: '123网盘',
+                    name: '123云盘',
                     url: 'https://www.123pan.com/'
                 }
             ],
@@ -19,7 +19,7 @@ const vm = new Vue({
                 {
                     icon: 'ri-message-3-line',
                     name: '商务合作',
-                    url: 'http://wpa.qq.com/msgrd?v=3&uin=2471923911&site=qq&menu=yes'
+                    url: 'tencent://message/?uin=2471923911'
                 },
                 {
                     icon: 'ri-account-pin-circle-line',
