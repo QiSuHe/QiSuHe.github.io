@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline dotted;
+    text-underline-offset: 0.25rem;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+nav .nav-logo {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+nav .app-name {
+    color: #333333;
+}
+
+main {
+    margin-top: 3rem;
+}
+
+main .app-logo {
+    height: 15rem;
+    width: 15rem;
+    margin: auto;
+}
+
+main .app-name {
+    color: #333333;
+}
+
+main .description {
+    color: #666666;
+}
+
+main .version {
+    color: #999999;
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+}
+
+footer div {
+    width: 100vw;
+    text-align: center;
+}
+
+footer a {
+    margin: auto 0.25rem;
+}
