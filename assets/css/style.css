@@ -50,7 +50,6 @@ main .version {
 footer {
     bottom: 0;
     position: absolute;
-    padding: 0.25rem;
 }
 
 footer div {
