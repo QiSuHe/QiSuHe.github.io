@@ -1,77 +1,81 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="zh-CN">
 
 <head>
-  <meta charset="utf-8">
-  <title>暮光壁纸客户端APP下载</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="favicon.ico" rel="shortcut icon">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>暮光壁纸APP下载 - 暮光工作室</title>
+    <link rel="shortcut icon" href="./logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
 </head>
 
 <body>
-  <div class="root">
-    <div class="header">
-      <div class="nav">
-        <div class="title">
-          <div class="logo">
-            <img src="./images/logo.png" />
-          </div>
-          <p>暮光壁纸</p>
-        </div>
-        <div class="anchor">
-          <a href="https://wpa.qq.com/msgrd?v=3&uin=2471923911&site=qq&menu=yes" target="_blank" class="bdwork">
-            <i class="ri-message-3-line ri-fw"></i>
-            <p>商务合作</p>
-          </a>
-          <a href="https://space.bilibili.com/476467975" target="_blank" class="about">
-            <i class="ri-account-pin-circle-line ri-fw"></i>
-            <p>关于我们</p>
-          </a>
-        </div>
-      </div>
-      <div class="main">
-        <div class="left">
-          <div class="content">
-            <div class="applogo">
-              <img src="./images/logo.png" />
+    <div id="root">
+
+        <header v-cloak>
+
+            <nav class="py-2 border-bottom">
+                <div class="container d-flex flex-wrap">
+                    <ul class="nav me-auto">
+                        <img :src="logo" class="nav-logo" />
+                        <span class="fs-2 px-2 app-name"><strong>{{name}}</strong></span>
+                    </ul>
+                    <ul class="nav">
+                        <li v-for="(c,clinks) of contact" :key="clinks" class="nav-item">
+                            <a target="_blank" :href="c.url" class="nav-link link-dark px-2">
+                                <i :class="c.icon"></i>
+                                <span>{{c.name}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <main class="text-center">
+
+                <div>
+                    <img :src="logo" class="mx-auto d-block app-logo" />
+                    <span class="fs-1 app-name"><strong>{{name}}APP</strong></span>
+                </div>
+                <span class="fs-3 description">免费壁纸软件，素材一应俱全</span>
+                <div class="dropdown py-3">
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle fs-4" data-bs-toggle="dropdown">
+                        <i class="ri-download-cloud-2-line"></i>
+                        立即下载
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li v-for="(d,dlinks) of downloads" :key="dlinks"><a target="_blank" class="dropdown-item"
+                                :href="d.url">{{d.name}}</a></li>
+                    </ul>
+                </div>
+                <span class="fs-10 version">最新版本{{version}}</span>
+
+            </main>
+
+        </header>
+
+
+        <footer v-cloak>
+
+            <div>友情链接：
+                <span v-for="(f,flinks) of friends" :key="flinks">
+                    <a target="_blank" :href="f.url">{{f.name}}</a>
+                    {{f.gap}}
+                </span>
             </div>
-            <p class="name">暮光壁纸APP(Beta版)</p>
-            <p class="introduce">免费壁纸软件，素材一应俱全</p>
-            <a href="https://wwa.lanzoui.com/itWwd05exy7e" target="_blank" class="down">
-              <i class="ri-download-cloud-2-line ri-fw"></i>
-              <p>下载客户端APP</p>
-            </a>
-            <p class="vesion">最新版本V2.3.25</p>
-          </div>
-        </div>
-        <div class="right">
-          <div class="qrcode"><img src="./images/qrcode.png" />
-          </div>
-        </div>
-      </div>
+            <div>&copy;&nbsp;2021-present&nbsp;暮光工作室</div>
+
+        </footer>
+
     </div>
 
-    <footer>
-      <div class="links">
-        <p>友情链接：</p>
-        <a href="https://s757129.github.io" target="_blank">柒伍七の鱼</a>
-        |
-        <a href="https://bbs.tampermonkey.net.cn/?fromuid=27974" target="_blank">油猴中文网</a>
-      </div>
-      <div class="copyright">
-        <p>Copyright ©</p>
-        <p>
-          <script type="text/javascript">
-            var now = new Date()
-            document.write(now.getFullYear());
-          </script>
-        </p>
-        <p><a href="/">暮光工作室</a></p>
-        <p>All rights reserved.</p>
-    </footer>
-  </div>
 </body>
+
+<script src="./assets/js/vue.js"></script>
 
 </html>
