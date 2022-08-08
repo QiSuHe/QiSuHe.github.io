@@ -17,14 +17,14 @@ const vm = new Vue({
             ],
             contact: [
                 {
-                    icon: 'ri-message-3-line',
-                    name: '商务合作',
-                    url: 'tencent://message/?uin=2471923911'
+                    icon: 'ri-play-circle-line',
+                    name: '视频教程',
+                    url: 'https://space.bilibili.com/476467975'
                 },
                 {
-                    icon: 'ri-account-pin-circle-line',
-                    name: '关于我们',
-                    url: 'https://space.bilibili.com/476467975'
+                    icon: 'ri-outlet-line',
+                    name: '商务合作',
+                    url: 'tencent://message/?uin=2471923911'
                 }
             ],
             friends: [
