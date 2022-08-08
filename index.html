@@ -27,8 +27,7 @@
                     <ul class="nav">
                         <li v-for="(c,clinks) of contact" :key="clinks" class="nav-item">
                             <a target="_blank" :href="c.url" class="nav-link link-dark px-2">
-                                <i :class="c.icon"></i>
-                                <span>{{c.name}}</span>
+                                <i :class="c.icon"></i>{{c.name}}
                             </a>
                         </li>
                     </ul>
@@ -49,8 +48,7 @@
                         立即下载
                     </button>
                     <ul class="dropdown-menu">
-                        <li v-for="(d,dlinks) of downloads" :key="dlinks"><a target="_blank" class="dropdown-item"
-                                :href="d.url">{{d.name}}</a></li>
+                        <li v-for="(d,dlinks) of downloads" :key="dlinks"><a target="_blank" class="dropdown-item" :href="d.url">{{d.name}}</a></li>
                     </ul>
                 </div>
                 <span class="fs-10 version">最新版本{{version}}</span>
