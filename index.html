@@ -3,77 +3,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="refresh" content="0.1;url=http://muguang.tk/">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>暮光壁纸APP下载 - 暮光工作室</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
 </head>
 
 <body>
-    <div id="root">
-
-        <header v-cloak>
-
-            <nav class="py-2 border-bottom">
-                <div class="container d-flex flex-wrap">
-                    <ul class="nav me-auto">
-                        <img :src="logo" class="nav-logo" />
-                        <span class="fs-2 px-2 app-name"><strong>{{name}}</strong></span>
-                    </ul>
-                    <ul class="nav">
-                        <li v-for="(c,clinks) of contact" :key="clinks" class="nav-item">
-                            <a target="_blank" :href="c.url" class="nav-link link-dark px-2">
-                                <i :class="c.icon"></i>{{c.name}}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-
-            <main class="text-center">
-
-                <div>
-                    <img :src="logo" class="mx-auto d-block app-logo" />
-                    <span class="fs-1 app-name"><strong>{{name}}APP</strong></span>
-                </div>
-                <span class="fs-3 description">免费壁纸软件，素材一应俱全</span>
-                <div class="dropdown py-3">
-                    <button type="button" class="btn btn-outline-primary dropdown-toggle fs-4" data-bs-toggle="dropdown">
-                        <i class="ri-download-cloud-2-line"></i>
-                        立即下载
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li v-for="(d,dlinks) of downloads" :key="dlinks"><a target="_blank" class="dropdown-item" :href="d.url">{{d.name}}</a></li>
-                    </ul>
-                </div>
-                <span class="fs-10 version">最新版本{{version}}</span>
-
-            </main>
-
-        </header>
-
-
-        <footer class="py-2" v-cloak>
-
-            <div>友情链接：
-                <span v-for="(f,flinks) of friends" :key="flinks">
-                    <a target="_blank" :href="f.url">{{f.name}}</a>
-                    {{f.gap}}
-                </span>
-            </div>
-            <div>&copy;&nbsp;2021-present&nbsp;暮光工作室</div>
-
-        </footer>
-
-    </div>
-
 </body>
-
-<script src="./assets/js/vue.js"></script>
-
+    
 </html>
