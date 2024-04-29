@@ -1,0 +1,328 @@
+/* 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+/* Preloader */
+#preloader {
+    background: #eee;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999999
+}
+
+
+/* The dot */
+#preloader .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 160px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -80px;
+    border-radius: 5px;
+    background-color: #1e3f57;
+    animation: dot1 3s cubic-bezier(.55, .3, .24, .99) infinite;
+}
+
+#preloader .dot:nth-child(2) {
+    z-index: 11;
+    width: 150px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -75px;
+    border-radius: 3px;
+    background-color: #3c617d;
+    animation-name: dot2;
+}
+
+#preloader .dot:nth-child(3) {
+    z-index: 12;
+    width: 40px;
+    height: 20px;
+    margin-top: 50px;
+    margin-left: -20px;
+    border-radius: 0 0 5px 5px;
+    background-color: #6bb2cd;
+    animation-name: dot3;
+}
+
+@keyframes dot1 {
+
+    3%,
+    97% {
+        width: 160px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -80px;
+    }
+
+    30%,
+    36% {
+        width: 80px;
+        height: 120px;
+        margin-top: -60px;
+        margin-left: -40px;
+    }
+
+    63%,
+    69% {
+        width: 40px;
+        height: 80px;
+        margin-top: -40px;
+        margin-left: -20px;
+    }
+}
+
+@keyframes dot2 {
+
+    3%,
+    97% {
+        width: 150px;
+        height: 90px;
+        margin-top: -45px;
+        margin-left: -75px;
+    }
+
+    30%,
+    36% {
+        width: 70px;
+        height: 96px;
+        margin-top: -48px;
+        margin-left: -35px;
+    }
+
+    63%,
+    69% {
+        width: 32px;
+        height: 60px;
+        margin-top: -30px;
+        margin-left: -16px;
+    }
+}
+
+@keyframes dot3 {
+
+    3%,
+    97% {
+        width: 40px;
+        height: 20px;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+
+    30%,
+    36% {
+        width: 8px;
+        height: 8px;
+        margin-top: 49px;
+        margin-left: -5px;
+        border-radius: 8px;
+    }
+
+    63%,
+    69% {
+        width: 16px;
+        height: 4px;
+        margin-top: -37px;
+        margin-left: -8px;
+        border-radius: 10px;
+    }
+}
+
+/* 全局 */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    user-select: none;
+}
+
+a {
+    color: rgba(255, 255, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, .75);
+}
+
+ul li {
+    padding: 0.25rem 0 0.25rem;
+}
+
+.ziti-google {
+    font-family: "Zhi Mang Xing", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 文本 */
+
+.text-blue {
+    color: var(--bs-blue) !important;
+}
+
+.text-indigo {
+    color: var(--bs-indigo) !important;
+}
+
+.text-purple {
+    color: var(--bs-purple) !important;
+}
+
+.text-pink {
+    color: var(--bs-pink) !important;
+}
+
+.text-red {
+    color: var(--bs-red) !important;
+}
+
+.text-orange {
+    color: var(--bs-orange) !important;
+}
+
+.text-yellow {
+    color: var(--bs-yellow) !important;
+}
+
+.text-green {
+    color: var(--bs-green) !important;
+}
+
+.text-teal {
+    color: var(--bs-teal) !important;
+}
+
+.text-cyan {
+    color: var(--bs-cyan) !important;
+}
+
+.text-gray {
+    color: var(--bs-gray) !important;
+}
+
+/* 按钮 */
+.btn-start {
+    color: var(--bs-light);
+    border: 3px solid var(--bs-secondary-bg-subtle);
+    background-color: rgba(var(--bs-light-rgb), 0);
+}
+
+.btn-start:hover {
+    color: var(--bs-primary);
+    border: 3px solid var(--bs-primary);
+    background-color: rgba(var(--bs-light-rgb), 1);
+}
+
+.btn-end {
+    color: var(--bs-light);
+    border: 3px solid var(--bs-secondary-bg-subtle);
+    background-color: rgba(var(--bs-light-rgb), 0);
+}
+
+.btn-end:hover {
+    color: var(--bs-danger);
+    border: 3px solid var(--bs-danger);
+    background-color: rgba(var(--bs-light-rgb), 1);
+}
+
+/* 导航 */
+.navbar {
+    background: rgba(var(--bs-primary-rgb), .95) !important;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+nav .logo {
+    height: 3.69rem;
+}
+
+/* 主体 */
+.heading {
+    font-size: 6.66rem;
+}
+
+.bg-gradient {
+    background: linear-gradient(rgba(var(--bs-primary-rgb), .95) 2.22%, rgba(99, 125, 255, .75) 100%) !important;
+}
+
+.img-cover {
+    width: 250px;
+    height: 555px;
+}
+
+#carousel {
+    height: 500px;
+    position: relative;
+}
+
+#carousel .content {
+    font-size: 100px;
+    text-align: center;
+    position: absolute;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+.card .icon {
+    width: 69px;
+    height: 69px;
+    line-height: 69px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--bs-secondary-bg-subtle);
+    margin: 0 auto;
+    font-size: 36px;
+    color: var(--bs-primary);
+    position: absolute;
+    top: -32px;
+    left: 0;
+    right: 0;
+}
+
+.card .price {
+    font-size: 30px;
+    background: var(--bs-primary);
+    display: inline-block;
+    border-radius: 500px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    #accordionFAQ {
+        width: 75%;
+    }
+}
+
+/* 页脚 */
+footer .heading{
+    font-size: 3.21rem;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    opacity: 0.75;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+}
