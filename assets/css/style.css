@@ -1,7 +1,8 @@
-/* 字体 */
+/*** Google Font ***/
 @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
 
-/* Preloader */
+
+/*** Preloader ***/
 #preloader {
     background: #eee;
     overflow: hidden;
@@ -13,8 +14,6 @@
     z-index: 999999
 }
 
-
-/* The dot */
 #preloader .dot {
     position: absolute;
     top: 50%;
@@ -134,27 +133,20 @@
     }
 }
 
-/* 全局 */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+/*** 全局 ***/
 
 body {
     user-select: none;
 }
 
 a {
-    color: rgba(255, 255, 255);
+    color: var(--bs-light-bg-subtle);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgba(255, 255, 255, .75);
+    color: rgba(var(--bs-light-rgb), .75);
 }
 
 ul li {
@@ -167,7 +159,66 @@ ul li {
     font-style: normal;
 }
 
-/* 文本 */
+
+/*** 背景 ***/
+
+.bg-blue {
+    background-color: var(--bs-blue) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-indigo {
+    background-color: var(--bs-indigo) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-purple {
+    background-color: var(--bs-purple) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-pink {
+    background-color: var(--bs-pink) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-red {
+    background-color: var(--bs-red) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-orange {
+    background-color: var(--bs-orange) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-yellow {
+    background-color: var(--bs-yellow) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-green {
+    background-color: var(--bs-green) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-teal {
+    background-color: var(--bs-teal) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-cyan {
+    background-color: var(--bs-cyan) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+.bg-gray {
+    background-color: var(--bs-gray) !important;
+    color: var(--bs-light-bg-subtle) !important;
+}
+
+
+/*** 文本 ***/
 
 .text-blue {
     color: var(--bs-blue) !important;
@@ -213,7 +264,9 @@ ul li {
     color: var(--bs-gray) !important;
 }
 
-/* 按钮 */
+
+/*** 按钮 ***/
+
 .btn-start {
     color: var(--bs-light);
     border: 3px solid var(--bs-secondary-bg-subtle);
@@ -221,9 +274,8 @@ ul li {
 }
 
 .btn-start:hover {
-    color: var(--bs-primary);
-    border: 3px solid var(--bs-primary);
-    background-color: rgba(var(--bs-light-rgb), 1);
+    border: 0;
+    background-color: rgba(var(--bs-primary-rgb), .9);
 }
 
 .btn-end {
@@ -233,58 +285,63 @@ ul li {
 }
 
 .btn-end:hover {
-    color: var(--bs-danger);
-    border: 3px solid var(--bs-danger);
-    background-color: rgba(var(--bs-light-rgb), 1);
+    border: 0;
+    background-color: rgba(var(--bs-danger-rgb), .9);
 }
 
-/* 导航 */
-.navbar {
+
+/*** 导航 ***/
+
+nav {
     background: rgba(var(--bs-primary-rgb), .95) !important;
 }
 
-.nav-link {
-    color: #fff;
-}
-
 nav .logo {
-    height: 3.69rem;
+    height: 2.22rem;
 }
 
-/* 主体 */
+.nav-link {
+    color: var(--bs-light);
+}
+
+
+/*** 首页 ***/
+
 .heading {
     font-size: 6.66rem;
 }
 
 .bg-gradient {
-    background: linear-gradient(rgba(var(--bs-primary-rgb), .95) 2.22%, rgba(99, 125, 255, .75) 100%) !important;
+    background: linear-gradient(rgba(var(--bs-primary-rgb), .95) 1.11%, rgba(99, 125, 255, .75) 100%) !important;
 }
 
 .img-cover {
-    width: 250px;
+    width: 255px;
     height: 555px;
 }
 
-#carousel {
-    height: 500px;
-    position: relative;
+
+/*** 特色 ***/
+
+.icon-shape {
+    display: inline-flex;
+    width: 3.69rem;
+    height: 3.69rem;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
 }
 
-#carousel .content {
-    font-size: 100px;
-    text-align: center;
-    position: absolute;
-    user-select: none;
-    transition: all 0.3s;
-}
+
+/*** 价格 ***/
 
 .card .icon {
     width: 69px;
     height: 69px;
     line-height: 69px;
-    border-radius: 50%;
-    background: #fff;
-    border: 1px solid var(--bs-secondary-bg-subtle);
+    background: white;
+    border: 2px solid var(--bs-secondary-bg-subtle);
     margin: 0 auto;
     font-size: 36px;
     color: var(--bs-primary);
@@ -295,15 +352,18 @@ nav .logo {
 }
 
 .card .price {
-    font-size: 30px;
+    font-size: 36px;
     background: var(--bs-primary);
     display: inline-block;
-    border-radius: 500px;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    color: #fff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    color: var(--bs-light);
 }
+
+
+/*** FAQ ***/
 
 @media (min-width: 992px) {
     #accordionFAQ {
@@ -311,10 +371,75 @@ nav .logo {
     }
 }
 
-/* 页脚 */
-footer .heading{
+
+/*** 页脚 ***/
+
+footer {
+    background: linear-gradient(to top, rgba(var(--bs-primary-rgb), .95) 9.99%, rgba(99, 125, 255, .75) 100%) !important;
+}
+
+footer .heading {
     font-size: 3.21rem;
 }
+
+
+/*** 卡片 ***/
+
+.card {
+    height: 100%;
+    border: 3px solid var(--bs-secondary-bg-subtle);
+}
+
+.card img{
+    width: 120px;
+    border: 3px solid var(--bs-secondary-bg-subtle);
+}
+
+.card:has(img):hover,
+.card:has(.price):hover {
+    animation: shake 666ms ease-in-out;
+    box-shadow: 0 0 5px rgba(var(--bs-black-rgb), .3);
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(+1px, 0, 0);
+    }
+
+    30%,
+    70% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(+1px, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-1px, 0, 0);
+    }
+}
+
+
+/*** 轮播图 ***/
+
+.swiper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*** 回到顶部 ***/
 
 #back-to-top {
     position: fixed;
