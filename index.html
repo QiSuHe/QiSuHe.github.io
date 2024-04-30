@@ -5,18 +5,20 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta name="referrer" content="no-referrer">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no">
     <meta name="keywords" content="暮光,暮光官网,暮光APP,暮光APP官网,暮光APP下载,黑科技,工具箱,搞机助手,一个木函,一个工具箱,搞机工具箱,万能工具箱,远航工具箱,破解,绿色,免费,美化,头像,表情,壁纸,软件,音乐,破解软件,免费音乐,全网热搜,今日热榜,抖音视频解析,抖音去水印,抖音无水印解析,异星软件空间,软件超小杯,洛雪音乐,歌词适配,小众软件,六音软件,果核剥壳,423down,zd423">
     <meta name="description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
     <title>暮光 - 你的万能工具箱</title>
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.staticfile.net/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
     <!-- Remixicon -->
-    <link rel="stylesheet" href="https://cdn.staticfile.net/remixicon/4.1.0/remixicon.min.css">
+    <link rel="stylesheet" href="/assets/css/remixicon.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
     <!-- Style -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Preloader -->
     <script>
         window.addEventListener("load", () => {
@@ -37,9 +39,9 @@
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg fw-bold" data-bs-theme="dark">
         <div class="container">
-            <!-- Brand -->
+            <!-- Logo -->
             <a class="d-flex align-items-center" href="#">
-                <img class="logo" src="assets/img/logo.png">
+                <img class="logo" src="/assets/images/logo.png">
                 <span class="fs-3 text-white ziti-google">暮光</span>
             </a>
             <!-- Toggler -->
@@ -59,7 +61,7 @@
                         <a class="nav-link" href="#display">截图展示</a>
                     </li>
                     <li class="nav-item col-12 col-lg-auto px-3">
-                        <a class="nav-link" href="#support">推广合作</a>
+                        <a class="nav-link" href="#market">推广合作</a>
                     </li>
                     <li class="nav-item col-12 col-lg-auto px-3">
                         <a class="nav-link" href="#help">常见问题</a>
@@ -71,25 +73,24 @@
             </div>
         </div>
     </nav>
-    <!-- Main content -->
-    <!-- Image -->
+    <!-- Homepage -->
     <section class="bg-gradient text-white py-5">
         <div class="container">
             <div class="row">
+                <!-- Cover -->
                 <div class="col-12 col-md-6 order-md-2 d-flex justify-content-center py-2">
                     <img class="img-cover" src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
                 </div>
-
                 <div class="col-12 col-md-6 text-center py-lg-5">
                     <div class="py-3 py-lg-5">
                         <!-- Heading -->
                         <p class="heading text-lg-start ziti-google">暮光</p>
                         <!-- Text -->
-                        <p class="fs-5 text-lg-start">一款 <abbr title="Material Design 3">MD3</abbr> 设计风格的黑科技小工具软件</p>
+                        <p class="fs-5 text-lg-start">一款 <abbr title="Material Design 3">MD3</abbr> 设计风格的黑科技工具箱</p>
                         <p class="fs-6 text-start">请注意，暮光APP完全免费使用，如遇到倒卖、贩卖，请自行联系卖家进行退款！谨防上当受骗！</p>
                     </div>
                     <!-- Buttons -->
-                    <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-start py-lg-5">
+                    <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-start">
                         <a class="btn btn-start fw-bold px-4 py-3 mt-2 me-md-2" href="https://www.123pan.com/s/ikkrVv-jpVQh.html" target="_blank">
                             <span><i class="ri-download-cloud-line"></i></span>
                             <span>123云盘(V3.1.6)</span>
@@ -102,45 +103,43 @@
                 </div>
             </div>
         </div>
-        <div id="features"></div>
     </section>
-    <!-- HomePage End -->
-    <section class="bg-white py-5">
-        <div class="container">
+    <!-- Features -->
+    <section id="features" class="py-5">
+        <div class="container py-3">
             <div class="text-center py-3">
                 <!-- Title -->
                 <p class="fs-1 fw-bold">特色功能</p>
                 <!-- Text -->
-                <p class="text-muted">感谢您对暮光的支持，如有问题请联系开发者</p>
+                <p class="text-muted">感谢您对暮光的支持，如有问题请联系我们</p>
             </div>
-            <!-- Features -->
             <div class="row mx-lg-4">
-                <!-- Features - Col 1 -->
+                <!-- Features - 1 -->
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-yellow">
-                            <div class="fs-5 me-2">
-                                <i class="ri-emotion-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-yellow icon-shape rounded-circle fs-2 me-4"><i class="ri-emotion-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">海量表情头像</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    头像包括动漫、萌宠、简约、欧美、风景、明星等，表情包来源于闪萌等各大平台
+                                    头像有动漫、萌宠、简约、欧美、风景、明星等，表情包源自闪萌等平台
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
-                    <div class="card">
-                        <div class="p-3 d-flex text-cyan">
-                            <div class="fs-5 me-2">
-                                <i class="ri-image-line"></i>
+                    <div class="card d-flex">
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-cyan icon-shape rounded-circle fs-2 me-4"><i class="ri-image-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">电脑手机壁纸</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    必应壁纸、Unsplash图库、WallpapersCraft 以及手机历代机型出厂壁纸
+                                    WallpapersCraft、Unsplash、必应壁纸以及手机历代机型出厂壁纸
                                 </p>
                             </div>
                         </div>
@@ -148,24 +147,25 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-red">
-                            <div class="fs-5 me-2">
-                                <i class="ri-newspaper-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-red icon-shape rounded-circle fs-2 me-4"><i class="ri-newspaper-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">头条资讯热榜</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    榜单来源于百度、微博、抖音、快手、知乎、豆瓣、小红书、哔哩哔哩等
+                                    榜单采集于百度、微博、抖音、快手、知乎、豆瓣、小红书、哔哩哔哩等
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Features - 2 -->
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-pink">
-                            <div class="fs-5 me-2">
-                                <i class="ri-disc-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-pink icon-shape rounded-circle fs-2 me-4"><i class="ri-disc-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">音乐播放下载</span>
@@ -178,9 +178,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-purple">
-                            <div class="fs-5 me-2">
-                                <i class="ri-movie-2-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-indigo icon-shape rounded-circle fs-2 me-4"><i class="ri-movie-2-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">视频图集解析</span>
@@ -193,9 +193,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-teal">
-                            <div class="fs-5 me-2">
-                                <i class="ri-shopping-bag-3-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-teal icon-shape rounded-circle fs-2 me-4"><i class="ri-shopping-bag-3-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">绿色破解软件</span>
@@ -206,17 +206,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- Features - Col 3 -->
+                <!-- Features - 3 -->
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-orange">
-                            <div class="fs-5 me-2">
-                                <i class="ri-lightbulb-flash-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-orange icon-shape rounded-circle fs-2 me-4"><i class="ri-lightbulb-flash-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">神奇搞机助手</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    MOMO检测，查看设备信息，调用原生安卓API，调用小米API，管理应用等
+                                    MOMO检测，查看设备信息，调用安卓API，调用小米API，管理应用等
                                 </p>
                             </div>
                         </div>
@@ -224,14 +224,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-blue">
-                            <div class="fs-5 me-2">
-                                <i class="ri-checkbox-circle-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-blue icon-shape rounded-circle fs-2 me-4"><i class="ri-checkbox-circle-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">在线信息查询</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    在线搜题，对话百科，汉字查询，历史上今天，每天60秒读懂世界，获取QQ头像等
+                                    在线搜题，汉字查询，历史上今天，每天60秒读懂世界，获取QQ头像等
                                 </p>
                             </div>
                         </div>
@@ -239,14 +239,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mt-3">
                     <div class="card">
-                        <div class="p-3 d-flex text-gray">
-                            <div class="fs-5 me-2">
-                                <i class="ri-game-line"></i>
+                        <div class="p-3 d-flex align-items-center">
+                            <div>
+                                <div class="bg-gray icon-shape rounded-circle fs-2 me-4"><i class="ri-game-line"></i></div>
                             </div>
                             <div>
                                 <span class="fs-5 fw-bold">更多有趣工具</span>
                                 <p class="fs-6 text-muted mb-0 mt-2">
-                                    随机一言、诗词、文案，抽签抓阄，图片取色，文字字幕滚动，提取手机壁纸等
+                                    随机一言、诗词、文案，图片取色，文字字幕滚动，提取手机壁纸等
                                 </p>
                             </div>
                         </div>
@@ -254,93 +254,115 @@
                 </div>
             </div>
         </div>
-        <div id="display"></div>
     </section>
-    <!-- Features End -->
-    <section class="bg-light-subtle py-5">
-        <div class="container">
+    <!-- Display -->
+    <section id="display" class="bg-light py-5">
+        <div class="container py-3">
             <div class="text-center py-3">
                 <!-- Title -->
                 <p class="fs-1 fw-bold">截图展示</p>
                 <!-- Text -->
-                <p class="text-muted">感谢您对暮光的支持，如有问题请联系开发者</p>
+                <p class="text-muted">感谢您对暮光的支持，如有问题请联系我们</p>
             </div>
             <!-- Carousel -->
-            <div id="carousel">
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
-               <div class="content"></div>
+            <div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://gitee.com/qishuhe/twilight/raw/master/images/cover.png">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next fw-bold"></div>
+                    <div class="swiper-button-prev fw-bold"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
-        <div id="support"></div>
     </section>
-    <!-- Display End -->
-    <section class="bg-white py-5">
-        <div class="container">
+    <!-- Market -->
+    <section id="market" class="py-5">
+        <div class="container py-3">
             <div class="text-center py-3">
                 <!-- Title -->
                 <p class="fs-1 fw-bold">推广合作</p>
                 <!-- Text -->
-                <p class="text-muted">感谢您对暮光的支持，如有问题请联系开发者</p>
+                <p class="text-muted">感谢您对暮光的支持，如有问题请联系我们</p>
             </div>
             <!-- Pricing -->
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-4 d-flex justify-content-center mt-5">
                     <div class="card" style="width: 20rem;">
-                        <div class="card-body text-center">
-                            <span class="icon">
+                        <div class="text-center">
+                            <span class="icon rounded-circle">
                                 <i class="ri-exchange-funds-line"></i>
                             </span>
-                            <div class="card-title fs-4 fw-bold mt-4">相互推广</div>
-                            <span class="price fw-bold mb-4 mt-2">￥0+</span>
-                            <ul class="card-text list-unstyled">
+                            <div class="fs-4 fw-bold mt-5">相互推广</div>
+                            <span class="price fw-bold m-4">￥0+</span>
+                            <ul class="list-unstyled">
                                 <li>首页列表随机展示</li>
                                 <li>每日5万+次展示</li>
                                 <li>保底日1千+UV</li>
                                 <li>可跟随后续更新</li>
                                 <li>先到先得</li>
                             </ul>
-                            <a href="#contact" class="btn btn-primary fw-bold rounded-pill px-4 py-2 my-2">联系我们</a>
+                            <a href="#contact" class="btn btn-primary fw-bold rounded-pill px-4 py-2 mt-2 mb-4">联系我们</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center mt-5">
                     <div class="card" style="width: 20rem;">
-                        <div class="card-body text-center">
-                            <span class="icon">
+                        <div class="text-center">
+                            <span class="icon rounded-circle">
                                 <i class="ri-exchange-cny-line"></i>
                             </span>
-                            <div class="card-title fs-4 fw-bold mt-4">商务合作</div>
-                            <span class="price fw-bold mb-4 mt-2">￥99+</span>
-                            <ul class="card-text list-unstyled">
+                            <div class="fs-4 fw-bold mt-5">商务合作</div>
+                            <span class="price fw-bold m-4">￥99+</span>
+                            <ul class="list-unstyled">
                                 <li>首页轮播图随机展示</li>
                                 <li>每日5万+次展示</li>
                                 <li>保底日1千+UV</li>
                                 <li>最高支持30日投放</li>
                                 <li>先到先得</li>
                             </ul>
-                            <a href="#contact" class="btn btn-primary fw-bold rounded-pill px-4 py-2 my-2">联系我们</a>
+                            <a href="#contact" class="btn btn-primary fw-bold rounded-pill px-4 py-2 mt-2 mb-4">联系我们</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="help"></div>
     </section>
-    <!-- Market End -->
-    <section class="bg-light-subtle py-5">
-        <div class="container">
+    <!-- Help -->
+    <section id="help" class="bg-light py-5">
+        <div class="container py-3">
             <div class="text-center py-3">
                 <!-- Title -->
                 <p class="fs-1 fw-bold">常见问题</p>
                 <!-- Text -->
-                <p class="text-muted">感谢您对暮光的支持，如有问题请联系开发者</p>
+                <p class="text-muted">感谢您对暮光的支持，如有问题请联系我们</p>
             </div>
             <div class="d-flex justify-content-center">
                 <div class="accordion" id="accordionFAQ">
@@ -383,22 +405,136 @@
                 </div>
             </div>
         </div>
-        <div id="about"></div>
     </section>
-    <section>
-        <div class="container bg-white py-5">
+    <!-- About -->
+    <section id="about" class="py-5">
+        <div class="container py-3">
             <div class="text-center py-3">
                 <!-- Title -->
                 <p class="fs-1 fw-bold">关于我们</p>
                 <!-- Text -->
-                <p class="text-muted">感谢您对暮光的支持，如有问题请联系开发者</p>
+                <p class="text-muted">感谢您对暮光的支持，如有问题请联系我们</p>
             </div>
-            <div class="row"></div>
+            <div class="row mx-lg-4">
+                <!-- users - 1 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- users - 2 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- users - 3 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- users - 4 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- users - 5 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- users - 6 -->
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mt-3">
+                    <div class="card">
+                        <div class="p-3 text-center">
+                            <img class="rounded-circle" src="https://q1.qlogo.cn/g?b=qq&nk=2858727468&s=0">
+                            <hr>
+                            <p class="fs-5 fw-bold mb-0">潘钜森</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- FAQs End -->
     <!-- Footer -->
-    <footer class="bg-primary pt-5">
+    <footer class="pt-5">
         <div class="container text-white pt-lg-3">
             <div class="row">
                 <div class="col-lg-5 mb-3 mb-lg-0">
@@ -407,7 +543,7 @@
                         <span class="heading text-white ziti-google">暮光</span>
                     </a>
                     <!-- Webpixels' mission -->
-                    <p class="fs-5 mt-2 pe-lg-5">一款 <abbr title="Material Design 3">MD3</abbr> 设计风格的黑科技小工具软件</p>
+                    <p class="fs-5 mt-2 pe-lg-5">一款 <abbr title="Material Design 3">MD3</abbr> 设计风格的黑科技工具箱</p>
                     <p class="fs-6 mt-2 pe-lg-5">请注意，暮光APP完全免费使用，如遇到倒卖、贩卖，请自行联系卖家进行退款！谨防上当受骗！</p>
                 </div>
                 <div class="col-lg-3 col-6 col-sm-4 ml-lg-auto mb-3 mb-lg-0">
@@ -445,17 +581,82 @@
             </div>
         </div>
     </footer>
+    <!-- Back To Top -->
     <span id="back-to-top">
         <a href="javascript:scrollTo(0, 0)" class="btn btn-dark">
             <i class="ri-arrow-up-line"></i>
         </a>
     </span>
-    <!-- jQuery -->
-    <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="https://cdn.staticfile.net/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <!-- JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper -->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            keyboard: {
+                enabled: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                "@0.75": {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                "@1.50": {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            },
+        })
+
+
+        function isBackToTop() {
+            var backToTopBtn = document.querySelector("#back-to-top")
+            var currentHeight = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+            if (currentHeight > 222) {
+                backToTopBtn.style.display = "block"
+            } else {
+                backToTopBtn.style.display = "none"
+            }
+        }
+
+        window.addEventListener("load", () => {
+            isBackToTop()
+            window.addEventListener("scroll", () => {
+                isBackToTop()
+            })
+
+            var navItem = document.querySelectorAll("li.nav-item")
+            var navToggler = document.querySelector("button.navbar-toggler")
+            for (let i = 0; i < navItem.length; i++) {
+                navItem[i].addEventListener("click", () => {
+                    navToggler.click()
+                })
+            }
+        })
+    </script>
 </body>
 
 </html>
