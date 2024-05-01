@@ -265,6 +265,18 @@ ul li {
 }
 
 
+
+
+/*** 标题 ***/
+
+.heading {
+    font-size: 5.67rem;
+}
+
+.title {
+    text-shadow: 1px 1px 5px rgba(var(--bs-black-rgb), .3);
+}
+
 /*** 按钮 ***/
 
 .btn-start {
@@ -274,7 +286,7 @@ ul li {
 }
 
 .btn-start:hover {
-    border: 0;
+    border: 3px solid rgba(var(--bs-primary-rgb), .9);
     background-color: rgba(var(--bs-primary-rgb), .9);
 }
 
@@ -285,7 +297,7 @@ ul li {
 }
 
 .btn-end:hover {
-    border: 0;
+    border: 3px solid rgba(var(--bs-danger-rgb), .9);
     background-color: rgba(var(--bs-danger-rgb), .9);
 }
 
@@ -306,10 +318,6 @@ nav .logo {
 
 
 /*** 首页 ***/
-
-.heading {
-    font-size: 6.66rem;
-}
 
 .bg-gradient {
     background: linear-gradient(rgba(var(--bs-primary-rgb), .95) 1.11%, rgba(99, 125, 255, .75) 100%) !important;
@@ -390,9 +398,13 @@ footer .heading {
     border: 3px solid var(--bs-secondary-bg-subtle);
 }
 
-.card img{
+.card img {
     width: 120px;
     border: 3px solid var(--bs-secondary-bg-subtle);
+}
+
+.card:has(.price) {
+    width: 20rem;
 }
 
 .card:has(img):hover,
@@ -405,26 +417,26 @@ footer .heading {
 
     10%,
     90% {
-        transform: translate3d(-1px, 0, 0);
+        transform: translate3d(1px, 1%, 0);
     }
 
     20%,
     80% {
-        transform: translate3d(+1px, 0, 0);
+        transform: translate3d(1px, -1%, 0);
     }
 
     30%,
     70% {
-        transform: translate3d(-1px, 0, 0);
+        transform: translate3d(1px, 1%, 0);
     }
 
     40%,
     60% {
-        transform: translate3d(+1px, 0, 0);
+        transform: translate3d(1px, -1%, 0);
     }
 
     50% {
-        transform: translate3d(-1px, 0, 0);
+        transform: translate3d(1px, 1%, 0);
     }
 }
 
@@ -443,8 +455,8 @@ footer .heading {
 
 #back-to-top {
     position: fixed;
-    bottom: 50px;
-    right: 25px;
+    bottom: 3.69rem;
+    right: 2.22rem;
     opacity: 0.75;
 }
 
