@@ -1,5 +1,5 @@
 /*** Google Font ***/
-@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&&family=Zhi+Mang+Xing&display=swap");
 
 
 /*** Preloader ***/
@@ -135,26 +135,27 @@
 
 
 /*** 全局 ***/
-
-body {
-    user-select: none;
-}
-
 a {
     color: var(--bs-light-bg-subtle);
     text-decoration: none;
 }
 
 a:hover {
-    color: rgba(var(--bs-light-rgb), .75);
+    color: var(--bs-primary-bg-subtle);
 }
 
 ul li {
     padding: 0.25rem 0 0.25rem;
 }
 
-.ziti-google {
+.ziti-cn {
     font-family: "Zhi Mang Xing", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ziti-en {
+    font-family: "Potta One", system-ui;
     font-weight: 400;
     font-style: normal;
 }
@@ -265,7 +266,11 @@ ul li {
 }
 
 
+/*** 图片 ***/
 
+img {
+    user-select: none;
+}
 
 /*** 标题 ***/
 
@@ -274,10 +279,15 @@ ul li {
 }
 
 .title {
+    user-select: none;
     text-shadow: 1px 1px 5px rgba(var(--bs-black-rgb), .3);
 }
 
 /*** 按钮 ***/
+
+.btn {
+    user-select: none;
+}
 
 .btn-start {
     color: var(--bs-light);
@@ -290,6 +300,11 @@ ul li {
     background-color: rgba(var(--bs-primary-rgb), .9);
 }
 
+.btn-start:active {
+    border: 3px solid rgba(var(--bs-primary-rgb), .9) !important;
+    background-color: rgba(var(--bs-primary-rgb), .9) !important;
+}
+
 .btn-end {
     color: var(--bs-light);
     border: 3px solid var(--bs-secondary-bg-subtle);
@@ -299,6 +314,11 @@ ul li {
 .btn-end:hover {
     border: 3px solid rgba(var(--bs-danger-rgb), .9);
     background-color: rgba(var(--bs-danger-rgb), .9);
+}
+
+.btn-end:active {
+    border: 3px solid rgba(var(--bs-danger-rgb), .9) !important;
+    background-color: rgba(var(--bs-danger-rgb), .9) !important;
 }
 
 
@@ -326,48 +346,6 @@ nav .logo {
 .img-cover {
     width: 255px;
     height: 555px;
-}
-
-
-/*** 特色 ***/
-
-.icon-shape {
-    display: inline-flex;
-    width: 3.69rem;
-    height: 3.69rem;
-    text-align: center;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/*** 价格 ***/
-
-.card .icon {
-    width: 69px;
-    height: 69px;
-    line-height: 69px;
-    background: white;
-    border: 2px solid var(--bs-secondary-bg-subtle);
-    margin: 0 auto;
-    font-size: 36px;
-    color: var(--bs-primary);
-    position: absolute;
-    top: -32px;
-    left: 0;
-    right: 0;
-}
-
-.card .price {
-    font-size: 36px;
-    background: var(--bs-primary);
-    display: inline-block;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    line-height: 120px;
-    color: var(--bs-light);
 }
 
 
@@ -404,40 +382,49 @@ footer .heading {
 }
 
 .card:has(.price) {
-    width: 20rem;
+    width: 22rem;
 }
 
 .card:has(img):hover,
 .card:has(.price):hover {
-    animation: shake 666ms ease-in-out;
     box-shadow: 0 0 5px rgba(var(--bs-black-rgb), .3);
 }
 
-@keyframes shake {
+.card .price {
+    font-size: 2.69rem;
+    background: var(--bs-primary);
+    display: inline-block;
+    border-radius: 50%;
+    width: 7.89rem;
+    height: 7.89rem;
+    line-height: 7.89rem;
+    color: var(--bs-light);
+}
 
-    10%,
-    90% {
-        transform: translate3d(1px, 1%, 0);
-    }
+.card .icon {
+    width: 4.32rem;
+    height: 4.32rem;
+    background: white;
+    border: 2px solid var(--bs-secondary-bg-subtle);
+    margin: 0 auto;
+    font-size: 2.22rem;
+    color: var(--bs-primary);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -32px;
+    left: 0;
+    right: 0;
+}
 
-    20%,
-    80% {
-        transform: translate3d(1px, -1%, 0);
-    }
-
-    30%,
-    70% {
-        transform: translate3d(1px, 1%, 0);
-    }
-
-    40%,
-    60% {
-        transform: translate3d(1px, -1%, 0);
-    }
-
-    50% {
-        transform: translate3d(1px, 1%, 0);
-    }
+.card .icon-shape {
+    display: inline-flex;
+    width: 3.69rem;
+    height: 3.69rem;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
 }
 
 
