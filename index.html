@@ -605,7 +605,7 @@
             </div>
             <hr>
             <div class="copyright text-center pb-4 pt-3">
-                &copy; 2018 <a href="/" class="fw-bold">暮光工作室</a>.
+                Copyright &copy; 2018-至今 暮光工作室 All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -667,8 +667,7 @@
         var myDate = new Date(),
         getYear = myDate.getFullYear()
         , copyright = document.querySelector("footer .copyright")
-        , webName = document.querySelector("nav .ziti-cn").innerHTML
-        copyright.innerHTML = `&copy; ${getYear} <a href="/" class="fw-bold">${webName}</a>.`
+        copyright.innerHTML = `Copyright &copy; 2018-${getYear} 暮光工作室 All Rights Reserved.`
         
         function sendQQmsg(num) {
             let userAgent = window.navigator.userAgent || navigator.userAgent
