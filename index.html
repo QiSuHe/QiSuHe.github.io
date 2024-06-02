@@ -596,7 +596,7 @@
                         <li class="fs-5 mt-1">
                             <a class="pe-1" title="GitHub" href="https://github.com/qshtom" target="_blank" rel="nofollow"><i class="ri-github-fill"></i></a>
                             <a class="px-1" title="哔哩哔哩" href="https://space.bilibili.com/476467975" target="_blank" rel="nofollow"><i class="ri-bilibili-fill"></i></a>
-                            <a class="px-1" title="抖音" href="Javascript:;" onclick="douyinMy()" rel="nofollow"><i class="ri-tiktok-fill"></i></a>
+                            <a class="px-1" title="抖音" href="https://www.douyin.com/user/MS4wLjABAAAAKCARZeYIPD0DqgOJRpELneMyHZMZSVLD1IxNN3CUQjA" target="_blank" rel="nofollow"><i class="ri-tiktok-fill"></i></a>
                             <a class="px-1" title="酷安" href="https://www.coolapk.com/u/3422231" target="_blank" rel="nofollow"><i class="ri-meta-fill"></i></a>
                             <a class="ps-1" title="Telegram" href="https://t.me/QiSHuHe" target="_blank" rel="nofollow"><i class="ri-telegram-fill"></i></a>
                         </li>
@@ -670,14 +670,6 @@
             let pcUrl = `tencent://message/?uin=${num}&Site=Sambow&Menu=yes`
             let mobileUrl = `mqqwpa://im/chat?chat_type=wpa&uin=${num}&version=1&src_type=web&web_src=oicqzone.com`
             isMobile ? window.location.href = mobileUrl : window.location.href = pcUrl
-        }
-
-        function douyinMy() {
-            let userAgent = window.navigator.userAgent || navigator.userAgent
-            let isMobile = /Android|webOS|iPhone|iPad|iPod|Mobile/i.test(userAgent)
-            let pcUrl = `https://www.douyin.com/user/MS4wLjABAAAAKCARZeYIPD0DqgOJRpELneMyHZMZSVLD1IxNN3CUQjA`
-            let mobileUrl = `snssdk1128://user/profile/935046249476640`
-            isMobile ? window.location.href = mobileUrl : window.open(pcUrl, "_blank")
         }
 
         function isBackToTop() {
