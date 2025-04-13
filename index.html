@@ -592,7 +592,7 @@
                         <li>邮箱：<a href="mailto:QiSHuHe@88.com" rel="nofollow">QiSHuHe@88.com</a></li>
                         <li class="fs-5 mt-1">
                             <a class="px-1" title="GitHub" href="https://github.com/qisuhe" target="_blank" rel="nofollow"><i class="ri-github-fill"></i></a>
-                            <a class="px-1" title="微信公众号" href="javascript:weixin()" target="_blank" rel="nofollow"><i class="ri-wechat-fill"></i></a>
+                            <a class="px-1" title="微信公众号" href="#weixin" onclick="weixin()" target="_blank" rel="nofollow"><i class="ri-wechat-fill"></i></a>
                             <a class="px-1" title="哔哩哔哩" href="https://space.bilibili.com/476467975" target="_blank" rel="nofollow"><i class="ri-bilibili-fill"></i></a>
                             <a class="px-1" title="抖音" href="https://www.douyin.com/user/MS4wLjABAAAAKCARZeYIPD0DqgOJRpELneMyHZMZSVLD1IxNN3CUQjA" target="_blank" rel="nofollow"><i class="ri-tiktok-fill"></i></a>
                             <a class="px-1" title="酷安" href="https://www.coolapk.com/u/3422231" target="_blank" rel="nofollow"><i class="ri-meta-fill"></i></a>
@@ -687,12 +687,13 @@
 
         function weixin() { 
             var r = confirm("微信搜索“暮光工作室”即可关注");
-                if (r == !0){
-                    copy("暮光工作室")
-                    location.href="weixin://"
-                }
-            }
-        } 
+            if (r == true){
+                copy("暮光工作室");
+                window.open("weixin://", "_blank");
+            } else {
+                copy("暮光工作室");
+            };
+        };
 
         window.addEventListener("load", () => {
             isBackToTop()
