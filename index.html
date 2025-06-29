@@ -35,9 +35,23 @@
 
     <!-- Particles.js for background -->
     <script src="https://unpkg.com/particlesjs@2.0.0/dist/particles.min.js"></script>
+
+    <!-- Preloader -->
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.querySelector("#preloader").remove()
+            }, 321)
+        })
+    </script>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader"></div>
+    </div>
+    
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
