@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="referrer" content="never">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>暮光 - 官方网站</title>
     <meta name="description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
@@ -457,19 +456,6 @@
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script type="text/javascript">
-        var myDate = new Date(),
-            getYear = myDate.getFullYear()
-            , copyright = document.querySelector("footer .copyright")
-        copyright.innerHTML = `Copyright &copy; 2018-${getYear} 暮光工作室 All Rights Reserved.`
-
-        function sendQQmsg(num) {
-            let userAgent = window.navigator.userAgent || navigator.userAgent
-            let isMobile = /Android|webOS|iPhone|iPad|iPod|Mobile/i.test(userAgent)
-            let pcUrl = `tencent://message/?uin=${num}&Site=Sambow&Menu=yes`
-            let mobileUrl = `mqqwpa://im/chat?chat_type=wpa&uin=${num}&version=1&src_type=web&web_src=oicqzone.com`
-            isMobile ? window.location.href = mobileUrl : window.location.href = pcUrl
-        }
-
         function weixin() {
             event.preventDefault();
             const t = event.currentTarget
