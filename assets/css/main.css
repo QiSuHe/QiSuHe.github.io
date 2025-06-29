@@ -948,6 +948,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 32px;
 }
 
 .back-to-top.visible {
