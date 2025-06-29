@@ -968,6 +968,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 28px;
 }
 
 .back-to-top.visible {
