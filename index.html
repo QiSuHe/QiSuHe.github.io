@@ -31,6 +31,7 @@
     <link href="https://unpkg.com/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Particles.js for background -->
@@ -51,7 +52,7 @@
     <div id="preloader">
         <div class="preloader"></div>
     </div>
-    
+
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
@@ -64,7 +65,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#hero" class="nav-link">首页</a>
                 <a href="#features" class="nav-link">特色功能</a>
-                <a href="#display" class="nav-link">推广合作</a>
+                <a href="#display" class="nav-link">截图展示</a>
                 <a href="#disclaimer" class="nav-link">重要声明</a>
                 <a href="#about" class="nav-link">关于</a>
                 <a href="https://docs.qq.com/form/page/DR3dvQmR2TmNiR2dx" class="btn btn-secondary vip-link" target="_blank">
@@ -186,6 +187,42 @@
     <section id="display" class="display">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">截图展示</h2>
+                <p class="section-subtitle">仅部分功能界面展示，具体请下载APP体验</p>
+            </div>
+            <div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/001.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/002.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/003.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/004.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/005.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/006.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/images/display/007.png">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section id="display" class="display">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">推广合作</h2>
                 <p class="section-subtitle">现在支持在APP内投放您的专属广告</p>
             </div>
@@ -242,8 +279,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> -->
     <!-- Stats Section -->
     <section class="stats">
         <div class="container">
@@ -462,6 +498,52 @@
     </button>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        var swiper = new Swiper(".swiper", {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            mousewheel: true,
+            loop: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            keyboard: {
+                enabled: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                600: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                1800: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                },
+                2400: {
+                    slidesPerView: 6,
+                    spaceBetween: 60,
+                },
+            },
+        })
+    </script>
     <script src="assets/js/main.js"></script>
     <script type="text/javascript">
         function weixin() {
