@@ -1925,3 +1925,10 @@ section {
     border-radius: 36%;
     font-weight: 600;
 }
+
+.swiper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
