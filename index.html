@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暮光 - 官方网站</title>
+    <meta name="description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
+    <meta name="keywords" content="暮光,暮光官网,暮光APP,暮光APP官网,暮光APP下载,QiSuHe,qisuhe,qishuhe,QiSHuHe,muguang,twilight,暮光壁纸,薄暮微光,暮光之城,黑科技,工具箱,搞机助手,一个木函,一个工具箱,搞机工具箱,万能工具箱,远航工具箱,破解,绿色,免费,美化,头像,表情,壁纸,软件,音乐,破解软件,免费音乐,全网热搜,今日热榜,历史上今天,天气排行榜,抖音视频解析,抖音去水印,抖音无水印解析">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qisuhe.github.io/">
+    <meta property="og:title" content="暮光 - 官方网站">
+    <meta property="og:description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
+    <meta property="og:image" content="assets/images/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qisuhe.github.io/">
+    <meta property="twitter:title" content="暮光 - 官方网站">
+    <meta property="twitter:description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
+    <meta property="twitter:image" content="assets/images/logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.svg" />
+    <link rel="apple-touch-icon" href="assets/images/logo.svg" />
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2.1.4/mdui.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Potta+One&&family=Zhi+Mang+Xing&display=swap" />
+    <script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
+
+    <!-- Preloader -->
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.querySelector("#preloader").remove()
+            }, 321)
+        })
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .app-name {
+            font-family: 'Zhi Mang Xing', cursive;
+        }
+
+        .top-bar {
+            position: fixed !important;
+        }
+
+        .app-name,
+        .top-bar .logo,
+        .stat-number,
+        footer a:hover {
+            color: rgba(var(--mdui-color-primary), 0.75);
+        }
+
+        main .logo .logo,
+        footer .logo {
+            background-color: rgba(var(--mdui-color-primary), 0.95);
+        }
+
+        main .logo .logo {
+            width: var(--mdui-typescale-display-large-line-height);
+            height: var(--mdui-typescale-display-large-line-height);
+            border-radius: var(--mdui-shape-corner-large);
+        }
+
+        footer .logo {
+            width: var(--mdui-typescale-title-large-line-height);
+            height: var(--mdui-typescale-title-large-line-height);
+            border-radius: var(--mdui-shape-corner-small);
+        }
+
+        .icon {
+            color: rgba(var(--mdui-color-on-primary), 0.95);
+        }
+
+        main .icon {
+            font-size: var(--mdui-typescale-display-small-line-height);
+        }
+
+        footer .icon,
+        section .title,
+        footer h3 {
+            font-size: var(--mdui-typescale-title-large-size);
+        }
+
+        main .app-name,
+        .stat-number {
+            font-size: var(--mdui-typescale-display-medium-size);
+        }
+
+        main .app-desc {
+            font-size: var(--mdui-typescale-body-medium-size);
+        }
+
+        footer .app-name {
+            font-size: var(--mdui-typescale-headline-medium-size);
+        }
+
+        .download .download {
+            background-color: rgba(var(--mdui-color-primary), 0.75);
+        }
+
+        .releases .releases {
+            background-color: rgba(var(--mdui-color-secondary), 0.75);
+        }
+
+        .top-bar,
+        main {
+            background-color: rgba(var(--mdui-color-primary-container), 0.95);
+        }
+
+        .stats,
+        footer {
+            background-color: rgba(var(--mdui-color-surface-container), 0.95);
+        }
+
+        .faq {
+            background-color: rgba(var(--mdui-color-surface), 0.95);
+        }
+
+        main .app-desc,
+        section .subtitle,
+        .stat-label,
+        footer .app-desc,
+        footer .copyright,
+        footer a {
+            color: rgba(var(--mdui-color-secondary), 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader"></div>
+    </div>
+
+    <mdui-layout class="app" style="position: relative;overflow: hidden;">
+        <mdui-top-app-bar class="top-bar" variant="small" scroll-behavior="elevate">
+            <mdui-button-icon class="logo" icon="design_services--outlined"></mdui-button-icon>
+            <mdui-top-app-bar-title class="app-name">暮光</mdui-top-app-bar-title>
+
+            <mdui-dropdown trigger="click" stay-open-on-click>
+                <div class="trigger me-1" slot="trigger">
+                    <mdui-tooltip placement="bottom" content="主题" trigger="hover">
+                        <mdui-button-icon icon="light_mode--outlined"></mdui-button-icon>
+                    </mdui-tooltip>
+                </div>
+                <mdui-menu class="mode" selects="multiple" value="mode-0">
+                    <mdui-menu-item value="mode-1">浅色模式</mdui-menu-item>
+                    <mdui-menu-item value="mode-2">深色模式</mdui-menu-item>
+                    <mdui-divider class="my-1"></mdui-divider>
+                    <mdui-menu-item value="mode-0">跟随系统</mdui-menu-item>
+                </mdui-menu>
+            </mdui-dropdown>
+
+            <mdui-tooltip placement="bottom" content="提示" trigger="hover">
+                <mdui-button-icon class="tips ms-1" icon="info--outlined"></mdui-button-icon>
+            </mdui-tooltip>
+
+        </mdui-top-app-bar>
+
+
+        <mdui-layout-main class="layout-main">
+            <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                <div class="container">
+                    <div class="logo d-flex justify-content-center">
+                        <mdui-card class="logo d-flex justify-content-center align-items-center" variant="filled">
+                            <mdui-icon class="icon" name="design_services--outlined"></mdui-icon>
+                        </mdui-card>
+                    </div>
+                    <div class="app-name d-flex justify-content-center">暮光</div>
+                    <div class="app-desc d-flex justify-content-center">Lastest: v3.4.5</div>
+                    <div class="app-links d-flex justify-content-center my-4">
+                        <a class="download me-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
+                            <mdui-button class="download">立即下载</mdui-button>
+                        </a>
+                        <a class="releases ms-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
+                            <mdui-button class="releases">历史版本</mdui-button>
+                        </a>
+                    </div>
+                </div>
+            </main>
+
+            <section class="stats">
+                <div class="container p-5">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 mx-4">
+                        <div class=" p-2">
+                            <mdui-card class="stat-item w-100 p-3" variant="filled">
+                                <div class="stat-number py-2 d-flex justify-content-center fw-bold" data-target="300000" data-stat="fork-count">0</div>
+                                <div class="stat-label py-1 d-flex justify-content-center">累计用户数</div>
+                            </mdui-card>
+                        </div>
+                        <div class=" p-2">
+                            <mdui-card class="stat-item w-100 p-3" variant="filled">
+                                <div class="stat-number py-2 d-flex justify-content-center fw-bold" data-target="200" data-stat="star-count">0</div>
+                                <div class="stat-label py-1 d-flex justify-content-center">工具数量</div>
+                            </mdui-card>
+                        </div>
+                        <div class=" p-2">
+                            <mdui-card class="stat-item w-100 p-3" variant="filled">
+                                <div class="stat-number py-2 d-flex justify-content-center fw-bold" data-target="15" data-stat="contributor-count">0</div>
+                                <div class="stat-label py-1 d-flex justify-content-center">贡献者</div>
+                            </mdui-card>
+                        </div>
+                        <div class=" p-2">
+                            <mdui-card class="stat-item w-100 p-3" variant="filled">
+                                <div class="stat-number py-2 d-flex justify-content-center fw-bold" data-target="99" data-stat="uptime-rate">0</div>
+                                <div class="stat-label py-1 d-flex justify-content-center">正常运行率</div>
+                            </mdui-card>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <div class="container p-5">
+                    <div>
+                        <p class="title d-flex justify-content-center fw-bold">常见问题</p>
+                        <p class="subtitle d-flex justify-content-center">如果您还有其他的疑问，请向我们反馈</p>
+                    </div>
+                    <div class="d-flex justify-content-center py-3">
+                        <div class="col-xl-8 col-md-10 col-xs-12">
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                            <mdui-card class="w-100" variant="filled">
+                                <mdui-list>
+                                    <mdui-collapse>
+                                        <mdui-collapse-item>
+                                            <mdui-list-item slot="header">
+                                                Item 1
+                                                <mdui-icon slot="end-icon" name="keyboard_arrow_down--outlined"></mdui-icon>
+                                            </mdui-list-item>
+                                            <div>
+                                                <mdui-list-item>Item 1 - subitem</mdui-list-item>
+                                            </div>
+                                        </mdui-collapse-item>
+                                    </mdui-collapse>
+                                </mdui-list>
+                            </mdui-card>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                <div class="container pt-5">
+                    <div class="top row pb-4">
+                        <div class="item col-md-5 col-xs-12">
+                            <div class="d-flex align-items-center">
+                                <mdui-card class="logo d-flex justify-content-center align-items-center" variant="filled">
+                                    <mdui-icon class="icon" name="design_services--outlined"></mdui-icon>
+                                </mdui-card>
+                                <div class="app-name ps-1">暮光</div>
+                            </div>
+                            <div class="app-desc">科技便携生活</div>
+                            <div></div>
+                        </div>
+                        <div class="item col-md-2 col-xs-12">
+                            <h3>友情链接</h3>
+                            <ul>
+                                <li><a href="https://geoisam.github.io" target="_blank">潘钜森的博客</a></li>
+                            </ul>
+                        </div>
+                        <div class="item col-md-2 col-xs-12">
+                            <h3>快速链接</h3>
+                            <ul>
+                                <li><a href="https://docs.qq.com/form/page/DR0liQ2RMakNPUGdv" target="_blank">意见建议</a></li>
+                                <li><a href="https://docs.qq.com/form/page/DR2N2WWRBYmZUSVZt" target="_blank">侵权投诉</a></li>
+                            </ul>
+                        </div>
+                        <div class="item col-md-2 col-xs-12">
+                            <h3>联系我们</h3>
+                            <ul>
+                                <li><a href="mailto:QiSHuHe@88.com" target="_blank">QiSHuHe@88.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <mdui-divider></mdui-divider>
+                    <div class="d-flex justify-content-center align-items-center p-4">
+                        <div class="copyright">
+                            Copyright © 2018-<span id="currentYear">至今</span> 暮光工作室. All Rights Reserved.
+                            <script>
+                                document.getElementById('currentYear').textContent = new Date().getFullYear();
+                            </script>
+                        </div>
+                    </div>
+            </footer>
+        </mdui-layout-main>
+
+    </mdui-layout>
+
+    <mdui-dialog close-on-esc close-on-overlay-click class="example-headline-slot">
+        <span slot="headline">友情提示</span>
+        <span slot="description">请注意，暮光APP完全免费使用，如遇到倒卖、贩卖，请自行联系卖家进行退款！谨防上当受骗！</span>
+    </mdui-dialog>
+
+</body>
+<script>
+    const dialog = document.querySelector(".example-headline-slot")
+    const openButton = document.querySelector(".tips")
+
+    openButton.addEventListener("click", () => dialog.open = true)
+</script>
+<script src="assets/js/main.js"></script>
+<script type="text/javascript">
+    function weixin() {
+        event.preventDefault();
+        const t = event.currentTarget
+            , d = t.getAttribute("data-value")
+            , r = confirm("微信搜索“" + d + "”即可关注");
+        if (r == true) {
+            navigator.clipboard.writeText(d).then(() => {
+                window.open("weixin://", "_blank");
+            });
+        } else {
+            navigator.clipboard.writeText(d);
+        };
+    };
+</script>
+
+</html>
