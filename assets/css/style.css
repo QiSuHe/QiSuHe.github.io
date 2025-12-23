@@ -11,23 +11,12 @@ a {
     text-decoration: none;
 }
 
-#top-bar {
-    position: fixed !important;
-}
-
-.app {
-    position: relative;
-    overflow: hidden;
-}
-
 main {
     min-height: 100vh;
 }
 
 #preloader {
     background-color: rgba(var(--mdui-color-primary-container), 1);
-    position: fixed;
-    overflow: hidden;
     top: 0;
     left: 0;
     bottom: 0;
@@ -37,10 +26,9 @@ main {
 
 #back-to-top {
     display: none;
-    position: fixed;
-    float: right;
+    background-color: rgba(var(--mdui-color-primary-container), 0.95);
     bottom: 4.5rem;
-    right: 2.5rem;
+    right: 1.75rem;
     z-index: 666;
 }
 
