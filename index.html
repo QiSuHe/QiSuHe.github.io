@@ -87,9 +87,11 @@
                         </mdui-card>
                     </div>
                     <div class="app-name d-flex justify-content-center">暮光</div>
-                    <div class="app-desc d-flex justify-content-center">Lastest: v3.4.5</div>
+                    <div class="d-flex justify-content-center">
+                        <mdui-button class="app-desc" variant="text">Lastest: loading...</mdui-button>
+                    </div>
                     <div class="links d-flex justify-content-center my-4">
-                        <a class="download me-2" href="https://gh-proxy.org/https://github.com/QiSuHe/QiSuHe.github.io/releases/download/v3.4.5/Twilight_v3.4.5.apk" target="_blank">
+                        <a class="download me-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
                             <mdui-button class="download">立即下载</mdui-button>
                         </a>
                         <a class="releases ms-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
@@ -329,15 +331,25 @@
         <mdui-button class="open" slot="action" variant="tonal">打开微信</mdui-button>
     </mdui-dialog>
 
-    <mdui-snackbar id="copy-success" closeable>复制成功</mdui-snackbar>
+    <mdui-dialog id="update" close-on-esc close-on-overlay-click>
+        <span slot="headline">更新日志</span>
+        <span class="app-logs" slot="description">修复了一些已知问题</span>
+    </mdui-dialog>
 
+    <mdui-snackbar id="copy-success" closeable>复制成功</mdui-snackbar>
 </body>
 
+
+<script src="assets/js/release.js"></script>
 <script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
 <script>
-    const dialog = document.querySelector("#tips")
-    const openButton = document.querySelector("#top-bar .tips")
-    openButton.addEventListener("click", () => dialog.open = true)
+    const dialog_tips = document.querySelector("#tips")
+    const openButton_tips = document.querySelector("#top-bar .tips")
+    openButton_tips.addEventListener("click", () => dialog_tips.open = true)
+
+    const dialog_update = document.querySelector("#update")
+    const openButton_update = document.querySelector("main .app-desc")
+    openButton_update.addEventListener("click", () => dialog_update.open = true)
 </script>
 <script src="assets/js/main.js"></script>
 <script type="text/javascript">
@@ -362,6 +374,5 @@
         })
     }
 </script>
-
 
 </html>
