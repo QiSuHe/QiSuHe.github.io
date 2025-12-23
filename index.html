@@ -56,10 +56,14 @@
             <mdui-button-icon class="logo" icon="design_services--outlined"></mdui-button-icon>
             <mdui-top-app-bar-title class="app-name">暮光</mdui-top-app-bar-title>
 
+            <mdui-tooltip placement="bottom" content="更新日志" trigger="hover">
+                <mdui-button-icon class="update mx-1" icon="update--outlined"></mdui-button-icon>
+            </mdui-tooltip>
+
             <mdui-dropdown trigger="click" stay-open-on-click>
-                <div class="me-1" slot="trigger">
-                    <mdui-tooltip placement="bottom" content="主题" trigger="hover">
-                        <mdui-button-icon icon="light_mode--outlined"></mdui-button-icon>
+                <div class="mx-1" slot="trigger">
+                    <mdui-tooltip placement="bottom" content="主题模式" trigger="hover">
+                        <mdui-button-icon class="icon"></mdui-button-icon>
                     </mdui-tooltip>
                 </div>
                 <mdui-menu class="mode" selects="single">
@@ -70,7 +74,7 @@
                 </mdui-menu>
             </mdui-dropdown>
 
-            <mdui-tooltip placement="bottom" content="提示" trigger="hover">
+            <mdui-tooltip placement="bottom" content="友情提示" trigger="hover">
                 <mdui-button-icon class="tips ms-1" icon="info--outlined"></mdui-button-icon>
             </mdui-tooltip>
 
@@ -348,8 +352,10 @@
     openButton_tips.addEventListener("click", () => dialog_tips.open = true)
 
     const dialog_update = document.querySelector("#update")
-    const openButton_update = document.querySelector("main .app-desc")
+    const openButton_version = document.querySelector("main .app-desc")
+    const openButton_update = document.querySelector("#top-bar .update")
     openButton_update.addEventListener("click", () => dialog_update.open = true)
+    openButton_version.addEventListener("click", () => dialog_update.open = true)
 </script>
 <script src="assets/js/main.js"></script>
 <script type="text/javascript">
