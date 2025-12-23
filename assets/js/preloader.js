@@ -1,6 +1,6 @@
 (function () {
     const CACHE_KEY = "release"
-    const CACHE_TTL = 5 * 60 * 1000
+    const CACHE_TTL = 10 * 60 * 1000
     const FETCH_TIMEOUT = 15 * 1000
 
     const API_URL = "https://api.github.com/repos/qisuhe/qisuhe.github.io/releases/latest"
@@ -117,3 +117,4 @@
     })
 
 })()
+
