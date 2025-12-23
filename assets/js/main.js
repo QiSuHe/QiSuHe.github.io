@@ -42,7 +42,8 @@ function initCounters() {
 
 /* 返回顶部 */
 function initBackToTop() {
-    const backToTopButton = document.getElementById("back-to-top")
+    const backToTopButton = document.querySelector("#back-to-top")
+    const topBarLogoButton = document.querySelector("#top-bar .logo")
 
     if (backToTopButton) {
         window.addEventListener("scroll", () => {
@@ -59,6 +60,12 @@ function initBackToTop() {
                 behavior: "smooth"
             })
         })
+        topBarLogoButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        })
     }
 }
 
@@ -67,16 +74,23 @@ function initBackToTop() {
 function initAppTheme() {
     const themeModeItem = document.querySelectorAll("#top-bar .mode .item")
     const themeMode = document.querySelector("#top-bar .mode")
+    const themeModeIcon = document.querySelector("#top-bar .icon")
     let nowTheme = localStorage.getItem("theme")
 
     if (!nowTheme || nowTheme == "auto") {
         mdui.setTheme("auto")
         themeMode.setAttribute("value", "auto")
         localStorage.setItem("theme", "auto")
+        themeModeIcon.setAttribute("icon", "contrast--outlined")
     } else {
         mdui.setTheme(nowTheme)
         themeMode.setAttribute("value", nowTheme)
         localStorage.setItem("theme", nowTheme)
+        if (nowTheme == "light") {
+            themeModeIcon.setAttribute("icon", "light_mode--outlined")
+        } else if (nowTheme == "dark") {
+            themeModeIcon.setAttribute("icon", "dark_mode--outlined")
+        }
     }
 
     themeModeItem.forEach(item => {
@@ -84,6 +98,13 @@ function initAppTheme() {
             nowTheme = e.currentTarget.getAttribute("value")
             mdui.setTheme(nowTheme)
             localStorage.setItem("theme", nowTheme)
+            if (nowTheme == "light") {
+                themeModeIcon.setAttribute("icon", "light_mode--outlined")
+            } else if (nowTheme == "dark") {
+                themeModeIcon.setAttribute("icon", "dark_mode--outlined")
+            } else {
+                themeModeIcon.setAttribute("icon", "contrast--outlined")
+            }
         })
     })
 }
