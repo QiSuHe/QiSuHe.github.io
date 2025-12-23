@@ -13,27 +13,27 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/#features</loc>
+  <loc>https://QiSuHe.github.io/#main</loc>
   <lastmod>2024-11-28T12:58:52+00:02</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/#display</loc>
+  <loc>https://QiSuHe.github.io/#features</loc>
   <lastmod>2024-11-28T12:59:52+00:03</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/#market</loc>
+  <loc>https://QiSuHe.github.io/#stats</loc>
   <lastmod>2024-11-28T13:00:52+00:04</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/#help</loc>
+  <loc>https://QiSuHe.github.io/#faq</loc>
   <lastmod>2024-11-28T13:01:52+00:05</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/#about</loc>
+  <loc>https://QiSuHe.github.io/#footer</loc>
   <lastmod>2024-11-28T13:02:52+00:06</lastmod>
   <priority>0.50</priority>
 </url>
@@ -43,34 +43,29 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/index.html#features</loc>
+  <loc>https://QiSuHe.github.io/index.html#main</loc>
   <lastmod>2024-11-28T13:05:52+00:08</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/index.html#display</loc>
+  <loc>https://QiSuHe.github.io/index.html#features</loc>
   <lastmod>2024-11-28T13:06:52+00:09</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/index.html#market</loc>
+  <loc>https://QiSuHe.github.io/index.html#stats</loc>
   <lastmod>2024-11-28T13:07:52+00:10</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/index.html#help</loc>
+  <loc>https://QiSuHe.github.io/index.html#faq</loc>
   <lastmod>2024-11-28T13:08:52+00:11</lastmod>
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://QiSuHe.github.io/index.html#about</loc>
+  <loc>https://QiSuHe.github.io/index.html#footer</loc>
   <lastmod>2024-11-28T13:09:52+00:12</lastmod>
   <priority>0.50</priority>
-</url>
-<url>
-  <loc>https://www.123pan.cn/s/ikkrVv-jpVQh</loc>
-  <lastmod>2024-11-28T13:11:52+00:13</lastmod>
-  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://www.lanzoul.com/b0ejgbfyf</loc>
