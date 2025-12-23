@@ -35,14 +35,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Preloader -->
-    <script>
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                document.querySelector("#preloader").remove()
-            }, 321)
-        })
-    </script>
-    <script src="assets/js/release.js"></script>
+    <script src="assets/js/preloader.js"></script>
 </head>
 
 <body>
@@ -344,7 +337,9 @@
     <mdui-snackbar id="copy-success" closeable>复制成功</mdui-snackbar>
 </body>
 
+<!-- MDUI -->
 <script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
+<!-- Dialog -->
 <script>
     const dialog_tips = document.querySelector("#tips")
     const openButton_tips = document.querySelector("#top-bar .tips")
@@ -357,6 +352,7 @@
     openButton_version.addEventListener("click", () => dialog_update.open = true)
 </script>
 <script src="assets/js/main.js"></script>
+<!-- Open WeChat -->
 <script type="text/javascript">
     function weixin(e) {
         e.preventDefault()
@@ -380,7 +376,4 @@
     }
 </script>
 
-
 </html>
-
-
