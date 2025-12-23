@@ -36,6 +36,7 @@ main {
 }
 
 #back-to-top {
+    display: none;
     position: fixed;
     float: right;
     bottom: 4.5rem;
@@ -113,7 +114,8 @@ footer a {
 }
 
 
-h3 {
+h3,
+ul li {
     color: rgba(var(--mdui-color-on-surface), 0.95);
 }
 
