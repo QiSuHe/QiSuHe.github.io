@@ -88,7 +88,7 @@ footer a:hover {
     color: rgba(var(--mdui-color-primary), 0.95);
 }
 
-.icon {
+.logo .icon {
     color: rgba(var(--mdui-color-on-primary), 0.95);
 }
 
