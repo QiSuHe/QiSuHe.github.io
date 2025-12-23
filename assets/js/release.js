@@ -103,12 +103,14 @@
     }
 
     function render(data) {
-        document.addEventListener("DOMContentLoaded", async () => {
-            document.querySelector("main .app-desc").textContent = `Lastest: ${data.tag_name} (${bytesToMiB(data.assets[0].size)}MB)` || "Lastest: null"
-            document.querySelector("a.download").href = `https://gh-proxy.org/${data.assets[0].browser_download_url}` || "https://www.lanzoul.com/b0ejgbfyf"
-            document.querySelector("#update .app-logs").innerHTML = normalizeBody(data.body) || "修复了一些已知问题"
-        })
+        document.querySelector("main .app-desc").textContent = `Lastest: ${data.tag_name} (${bytesToMiB(data.assets[0].size)}M)` || "Lastest: null"
+        document.querySelector("a.download").href = `https://gh-proxy.org/${data.assets[0].browser_download_url}` || "https://www.lanzoul.com/b0ejgbfyf"
+        document.querySelector("#update .app-logs").innerHTML = normalizeBody(data.body) || "修复了一些已知问题"
     }
 
-    init()
+    document.addEventListener("DOMContentLoaded", async () => {
+        init()
+    })
+    
 })()
+
