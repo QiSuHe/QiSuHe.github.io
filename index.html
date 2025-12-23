@@ -14,18 +14,18 @@
     <meta property="og:url" content="https://qisuhe.github.io/">
     <meta property="og:title" content="暮光 - 官方网站">
     <meta property="og:description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
-    <meta property="og:image" content="assets/images/logo.svg">
+    <meta property="og:image" content="assets/img/logo.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://qisuhe.github.io/">
     <meta property="twitter:title" content="暮光 - 官方网站">
     <meta property="twitter:description" content="暮光，致力于为您打造一个好用便捷的万能工具箱，无需注册即可免费使用各种在线工具，囊括了头像、表情、壁纸、今日热榜、音乐下载、视频解析、破解软件、搞机助手、日常生活、查询服务等诸多种类的在线工具。">
-    <meta property="twitter:image" content="assets/images/logo.svg">
+    <meta property="twitter:image" content="assets/img/logo.svg">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/logo.svg" />
-    <link rel="apple-touch-icon" href="assets/images/logo.svg" />
+    <link rel="icon" href="assets/img/logo.svg" />
+    <link rel="apple-touch-icon" href="assets/img/logo.svg" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -46,13 +46,13 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader" class="d-flex justify-content-center align-items-center">
+    <div id="preloader" class="position-fixed overflow-hidden d-flex justify-content-center align-items-center">
         <mdui-circular-progress></mdui-circular-progress>
     </div>
 
-    <mdui-layout class="app">
+    <mdui-layout class="app position-relative overflow-hidden">
         <!-- Top Bar -->
-        <mdui-top-app-bar id="top-bar" variant="small" scroll-behavior="elevate">
+        <mdui-top-app-bar id="top-bar" class="container-fluid position-fixed px-lg-5" variant="small" scroll-behavior="elevate">
             <mdui-button-icon class="logo" icon="design_services--outlined"></mdui-button-icon>
             <mdui-top-app-bar-title class="app-name">暮光</mdui-top-app-bar-title>
 
@@ -268,9 +268,9 @@
 
             <!-- Footer -->
             <footer id="footer">
-                <div class="container pt-5">
-                    <div class="top row pb-3">
-                        <div class="item col-md-5 col-xs-12 py-2 px-4 pb-5">
+                <div class="container-fluid pt-5">
+                    <div class="top row pb-3 px-3 px-lg-5">
+                        <div class="item col-lg-5 col-xs-12 py-2 px-4 pb-5">
                             <div class="d-flex align-items-center">
                                 <mdui-card class="logo d-flex justify-content-center align-items-center" variant="filled">
                                     <mdui-icon class="icon" name="design_services--outlined"></mdui-icon>
@@ -280,20 +280,20 @@
                             <div class="app-desc">科技便携生活</div>
                             <div></div>
                         </div>
-                        <div class="friends item col-md-2 col-xs-12 py-2 px-4">
+                        <div class="friends item col-lg-2 col-xs-12 py-2 px-4">
                             <h3 class="fw-semibold">友情链接</h3>
                             <ul>
                                 <li><a href="https://geoisam.github.io" target="_blank">潘钜森的博客</a></li>
                             </ul>
                         </div>
-                        <div class="help item col-md-2 col-xs-12 py-2 px-4">
+                        <div class="help item col-lg-2 col-xs-12 py-2 px-4">
                             <h3 class="fw-semibold">快速链接</h3>
                             <ul>
                                 <li><a href="https://docs.qq.com/form/page/DR0liQ2RMakNPUGdv" target="_blank">意见建议</a></li>
                                 <li><a href="https://docs.qq.com/form/page/DR2N2WWRBYmZUSVZt" target="_blank">侵权投诉</a></li>
                             </ul>
                         </div>
-                        <div class="contact item col-md-3 col-xs-12 py-2 px-4">
+                        <div class="contact item col-lg-3 col-xs-12 py-2 px-4">
                             <h3 class="fw-semibold">联系我们</h3>
                             <ul>
                                 <li>微信公众号：<a href="#" onclick="weixin.call(this, event)">暮光工作室</a></li>
@@ -315,7 +315,7 @@
 
     </mdui-layout>
 
-    <mdui-fab id="back-to-top" size="small" icon="keyboard_arrow_up--outlined"></mdui-fab>
+    <mdui-fab id="back-to-top" class="position-fixed float-end" size="small" icon="keyboard_arrow_up--outlined"></mdui-fab>
 
     <mdui-dialog id="tips" close-on-esc close-on-overlay-click>
         <span slot="headline">友情提示</span>
@@ -362,6 +362,5 @@
         })
     }
 </script>
-
 
 </html>
