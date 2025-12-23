@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#top-bar {
+    position: fixed !important;
+}
+
+.app {
+    position: relative;
+    overflow: hidden;
+}
+
+main {
+    min-height: 100vh;
+}
+
+#preloader {
+    background-color: rgba(var(--mdui-color-primary-container), 1);
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    float: right;
+    bottom: 4.5rem;
+    right: 2.5rem;
+    z-index: 666;
+}
+
+
+/* LOGO */
+.app-name {
+    font-family: 'Zhi Mang Xing', cursive;
+}
+
+main .logo .logo {
+    width: var(--mdui-typescale-display-large-line-height);
+    height: var(--mdui-typescale-display-large-line-height);
+    border-radius: var(--mdui-shape-corner-large);
+}
+
+footer .logo {
+    width: var(--mdui-typescale-title-large-line-height);
+    height: var(--mdui-typescale-title-large-line-height);
+    border-radius: var(--mdui-shape-corner-small);
+}
+
+
+/* 背景颜色 */
+main .logo .logo,
+footer .logo {
+    background-color: rgba(var(--mdui-color-primary), 0.95);
+}
+
+.download .download {
+    background-color: rgba(var(--mdui-color-primary), 0.75);
+}
+
+#top-bar,
+main {
+    background-color: rgba(var(--mdui-color-primary-container), 0.95);
+}
+
+.releases .releases {
+    background-color: rgba(var(--mdui-color-secondary), 0.75);
+}
+
+#faq {
+    background-color: rgba(var(--mdui-color-surface), 0.95);
+}
+
+#stats,
+footer {
+    background-color: rgba(var(--mdui-color-surface-container), 0.95);
+}
+
+
+/* 字体颜色 */
+.app-name,
+#top-bar .logo,
+#stats .number,
+footer a:hover {
+    color: rgba(var(--mdui-color-primary), 0.95);
+}
+
+.icon {
+    color: rgba(var(--mdui-color-on-primary), 0.95);
+}
+
+main .app-desc,
+h3+p,
+#stats .label,
+footer .app-desc,
+footer .copyright,
+footer a {
+    color: rgba(var(--mdui-color-secondary), 0.95);
+}
+
+
+h3,
+ul li {
+    color: rgba(var(--mdui-color-on-surface), 0.95);
+}
+
+
+/* 字体大小 */
+main .app-name,
+#stats .number {
+    font-size: var(--mdui-typescale-display-medium-size);
+}
+
+main .icon {
+    font-size: var(--mdui-typescale-display-small-line-height);
+}
+
+footer .app-name {
+    font-size: var(--mdui-typescale-headline-medium-size);
+}
+
+footer .icon,
+section h3 {
+    font-size: var(--mdui-typescale-title-large-size);
+}
+
+footer h3 {
+    font-size: var(--mdui-typescale-title-medium-size);
+}
+
+main .app-desc {
+    font-size: var(--mdui-typescale-body-medium-size);
+}
+
+footer .copyright {
+    font-size: var(--mdui-typescale-body-small-size);
+}
