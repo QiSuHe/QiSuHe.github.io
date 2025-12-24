@@ -12,7 +12,7 @@ a {
 }
 
 main {
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 #preloader {
@@ -57,17 +57,9 @@ footer .logo {
     background-color: rgba(var(--mdui-color-primary), 0.95);
 }
 
-.download .download {
-    background-color: rgba(var(--mdui-color-primary), 0.75);
-}
-
 #top-bar,
 main {
     background-color: rgba(var(--mdui-color-primary-container), 0.95);
-}
-
-.releases .releases {
-    background-color: rgba(var(--mdui-color-secondary), 0.75);
 }
 
 #faq {
@@ -77,6 +69,14 @@ main {
 #stats,
 footer {
     background-color: rgba(var(--mdui-color-surface-container), 0.95);
+}
+
+#download .download {
+    background-color: rgba(var(--mdui-color-primary), 0.75);
+}
+
+#releases .releases {
+    background-color: rgba(var(--mdui-color-secondary), 0.75);
 }
 
 
