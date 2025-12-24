@@ -5,8 +5,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     initAppTheme()
     initQRcode()
 
+    let previousClass = document.documentElement.className
     const observerHtml = new MutationObserver(() => {
-        initQRcode()
+        const currentClass = document.documentElement.className
+        if (currentClass !== previousClass) {
+            previousClass = currentClass
+            initQRcode()
+        }
     })
     observerHtml.observe(document.documentElement, {
         attributes: true,
@@ -83,37 +88,40 @@ function initBackToTop() {
 /* 主题模式 */
 function initAppTheme() {
     const themeModeItem = document.querySelectorAll("#top-bar .mode .item")
-    const themeMode = document.querySelector("#top-bar .mode")
     const themeModeIcon = document.querySelector("#top-bar .icon")
+    const themeMode = document.querySelector("#top-bar .mode")
     let nowTheme = localStorage.getItem("theme")
 
     if (!nowTheme || nowTheme == "auto") {
         mdui.setTheme("auto")
-        themeMode.setAttribute("value", "auto")
         localStorage.setItem("theme", "auto")
-        themeModeIcon.setAttribute("icon", "contrast--outlined")
+        themeModeIcon.icon = "contrast--outlined"
     } else {
         mdui.setTheme(nowTheme)
-        themeMode.setAttribute("value", nowTheme)
         localStorage.setItem("theme", nowTheme)
         if (nowTheme == "light") {
-            themeModeIcon.setAttribute("icon", "light_mode--outlined")
+            themeModeIcon.icon = "light_mode--outlined"
         } else if (nowTheme == "dark") {
-            themeModeIcon.setAttribute("icon", "dark_mode--outlined")
+            themeModeIcon.icon = "dark_mode--outlined"
         }
     }
 
     themeModeItem.forEach(item => {
         item.addEventListener("click", (e) => {
+            if (item.hasAttribute("selected")) {
+                e.preventDefault()
+                e.stopPropagation()
+                return
+            }
             nowTheme = e.currentTarget.getAttribute("value")
             mdui.setTheme(nowTheme)
             localStorage.setItem("theme", nowTheme)
             if (nowTheme == "light") {
-                themeModeIcon.setAttribute("icon", "light_mode--outlined")
+                themeModeIcon.icon = "light_mode--outlined"
             } else if (nowTheme == "dark") {
-                themeModeIcon.setAttribute("icon", "dark_mode--outlined")
+                themeModeIcon.icon = "dark_mode--outlined"
             } else {
-                themeModeIcon.setAttribute("icon", "contrast--outlined")
+                themeModeIcon.icon = "contrast--outlined"
             }
         })
     })
@@ -182,7 +190,7 @@ window.matchMedia("(prefers-color-scheme: dark)")
 function initAppVersion() {
     const CACHE_KEY = "release"
     const CACHE_TTL = 10 * 60 * 1000
-    const FETCH_TIMEOUT = 15 * 1000
+    const FETCH_TIMEOUT = 10 * 1000
 
     const API_URL = "https://api.github.com/repos/qisuhe/qisuhe.github.io/releases/latest"
 
