@@ -69,14 +69,12 @@
                 .then((res) => {
                     clearTimeout(timer)
                     if (!res.ok) {
-                        render()
                         reject(new Error("HTTP " + res.status))
                         return
                     }
                     resolve(res.json())
                 })
                 .catch((err) => {
-                    render()
                     clearTimeout(timer)
                     reject(err)
                 })
@@ -99,8 +97,10 @@
                 const anyCache = getAnyCache()
                 if (anyCache) {
                     render(anyCache)
-                    return
+                } else {
+                    render()
                 }
+                return
             })
     }
 
@@ -110,7 +110,7 @@
             if (p) p.remove()
         }, 321)
         document.querySelector("main .app-desc").textContent = `${data.tag_name} | ${bytesToMiB(data.assets[0].size)}MB | ${data.published_at.split("T")[0]}` || "科技便携生活"
-        document.querySelector("a#download").href = `https://gh-proxy.org/${data.assets[0].browser_download_url}` || "https://www.lanzoul.com/b0ejgbfyf"
+        document.querySelector("a#download").href = `https://gh-proxy.org/${data.assets[0].browser_download_url}` || "https://www.123pan.com/s/ikkrVv-jpVQh"
         document.querySelector("#update .app-logs").innerHTML = normalizeBody(data.body) || "修复了一些已知问题"
     }
 
