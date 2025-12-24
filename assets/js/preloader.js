@@ -69,12 +69,14 @@
                 .then((res) => {
                     clearTimeout(timer)
                     if (!res.ok) {
+                        render()
                         reject(new Error("HTTP " + res.status))
                         return
                     }
                     resolve(res.json())
                 })
                 .catch((err) => {
+                    render()
                     clearTimeout(timer)
                     reject(err)
                 })
@@ -117,3 +119,4 @@
     })
 
 })()
+
