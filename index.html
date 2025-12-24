@@ -51,13 +51,13 @@
                 <mdui-button-icon class="update mx-1" icon="update--outlined"></mdui-button-icon>
             </mdui-tooltip>
 
-            <mdui-dropdown trigger="click" stay-open-on-click>
+            <mdui-dropdown trigger="click">
                 <div class="mx-1" slot="trigger">
                     <mdui-tooltip placement="bottom" content="主题模式" trigger="hover">
                         <mdui-button-icon class="icon"></mdui-button-icon>
                     </mdui-tooltip>
                 </div>
-                <mdui-menu class="mode" selects="single">
+                <mdui-menu class="mode" selects="single" value="auto">
                     <mdui-menu-item class="item" value="light">浅色模式</mdui-menu-item>
                     <mdui-menu-item class="item" value="dark">深色模式</mdui-menu-item>
                     <mdui-divider class="my-1"></mdui-divider>
@@ -352,7 +352,7 @@
         openButton_version.addEventListener("click", () => dialog_update.open = true)
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener("DOMContentLoaded", () => {
             document.querySelector("#currentYear").textContent = new Date().getFullYear()
         })
         function weixin(e) {
