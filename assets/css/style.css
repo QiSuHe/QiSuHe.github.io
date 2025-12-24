@@ -35,7 +35,7 @@ main {
 
 /* LOGO */
 .app-name {
-    font-family: 'Zhi Mang Xing', cursive;
+    font-family: "Zhi Mang Xing", cursive;
 }
 
 main .logo .logo {
@@ -100,7 +100,6 @@ footer .copyright,
 footer a {
     color: rgba(var(--mdui-color-secondary), 0.95);
 }
-
 
 h3,
 ul li {
