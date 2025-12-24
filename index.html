@@ -87,7 +87,7 @@
                     <div class="app-name d-flex justify-content-center">暮光</div>
                     <div class="links d-flex justify-content-center mt-4">
                         <mdui-tooltip placement="left" variant="rich" trigger="hover">
-                            <a id="download" class="me-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
+                            <a id="download" class="me-2" href="https://www.123pan.com/s/ikkrVv-jpVQh" target="_blank">
                                 <mdui-button class="download">立即下载</mdui-button>
                             </a>
                             <div class="qrcode" slot="content"></div>
@@ -338,47 +338,47 @@
     </mdui-dialog>
 
     <mdui-snackbar id="copy-success" closeable>复制成功</mdui-snackbar>
+
+    <!-- Javascript -->
+    <script src="https://unpkg.com/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        const dialog_tips = document.querySelector("#tips")
+        const openButton_tips = document.querySelector("#top-bar .tips")
+        openButton_tips.addEventListener("click", () => dialog_tips.open = true)
+
+        const dialog_update = document.querySelector("#update")
+        const openButton_version = document.querySelector("main .app-desc")
+        const openButton_update = document.querySelector("#top-bar .update")
+        openButton_update.addEventListener("click", () => dialog_update.open = true)
+        openButton_version.addEventListener("click", () => dialog_update.open = true)
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("#currentYear").textContent = new Date().getFullYear()
+        })
+        function weixin(e) {
+            e.preventDefault()
+            const n = "暮光工作室"
+            const d = document.querySelector("#wechat")
+            const c = document.querySelector("#wechat .copy")
+            const o = document.querySelector("#wechat .open")
+            const t = document.querySelector("#copy-success")
+            d.open = true
+            c.addEventListener("click", () => {
+                navigator.clipboard.writeText(n).then(() => {
+                    t.open = true
+                })
+            })
+            o.addEventListener("click", () => {
+                navigator.clipboard.writeText(n).then(() => {
+                    t.open = true
+                    window.open("weixin://", "_blank")
+                })
+            })
+        }
+    </script>
 </body>
 
-<script src="https://unpkg.com/qrcodejs@1.0.0/qrcode.min.js"></script>
-<script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    const dialog_tips = document.querySelector("#tips")
-    const openButton_tips = document.querySelector("#top-bar .tips")
-    openButton_tips.addEventListener("click", () => dialog_tips.open = true)
-
-    const dialog_update = document.querySelector("#update")
-    const openButton_version = document.querySelector("main .app-desc")
-    const openButton_update = document.querySelector("#top-bar .update")
-    openButton_update.addEventListener("click", () => dialog_update.open = true)
-    openButton_version.addEventListener("click", () => dialog_update.open = true)
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector("#currentYear").textContent = new Date().getFullYear()
-    })
-    function weixin(e) {
-        e.preventDefault()
-        const n = "暮光工作室"
-        const d = document.querySelector("#wechat")
-        const c = document.querySelector("#wechat .copy")
-        const o = document.querySelector("#wechat .open")
-        const t = document.querySelector("#copy-success")
-        d.open = true
-        c.addEventListener("click", () => {
-            navigator.clipboard.writeText(n).then(() => {
-                t.open = true
-            })
-        })
-        o.addEventListener("click", () => {
-            navigator.clipboard.writeText(n).then(() => {
-                t.open = true
-                window.open("weixin://", "_blank")
-            })
-        })
-    }
-</script>
-
 </html>
-
