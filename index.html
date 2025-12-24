@@ -78,7 +78,7 @@
         <mdui-layout-main class="layout-main">
             <!-- Main -->
             <main id="main" class="d-flex justify-content-center align-items-center">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="logo d-flex justify-content-center">
                         <mdui-card class="logo d-flex justify-content-center align-items-center" variant="filled">
                             <mdui-icon class="icon" name="design_services--outlined"></mdui-icon>
@@ -86,12 +86,18 @@
                     </div>
                     <div class="app-name d-flex justify-content-center">暮光</div>
                     <div class="links d-flex justify-content-center mt-4">
-                        <a class="download me-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
-                            <mdui-button class="download">立即下载</mdui-button>
-                        </a>
-                        <a class="releases ms-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
-                            <mdui-button class="releases">历史版本</mdui-button>
-                        </a>
+                        <mdui-tooltip placement="left" variant="rich" trigger="hover">
+                            <a id="download" class="me-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
+                                <mdui-button class="download">立即下载</mdui-button>
+                            </a>
+                            <div class="qrcode" slot="content"></div>
+                        </mdui-tooltip>
+                        <mdui-tooltip placement="right" variant="rich" trigger="hover">
+                            <a id="releases" class="ms-2" href="https://www.lanzoul.com/b0ejgbfyf" target="_blank">
+                                <mdui-button class="releases">历史版本</mdui-button>
+                            </a>
+                            <div class="qrcode" slot="content"></div>
+                        </mdui-tooltip>
                     </div>
                     <div class="d-flex justify-content-center">
                         <mdui-button class="app-desc" variant="text">Lastest: loading...</mdui-button>
@@ -305,9 +311,6 @@
                     <div class="d-flex justify-content-center align-items-center p-4">
                         <div class="copyright">
                             Copyright &copy; 2018-<span id="currentYear">至今</span> 暮光工作室 All Rights Reserved.
-                            <script>
-                                document.getElementById('currentYear').textContent = new Date().getFullYear();
-                            </script>
                         </div>
                     </div>
             </footer>
@@ -337,9 +340,9 @@
     <mdui-snackbar id="copy-success" closeable>复制成功</mdui-snackbar>
 </body>
 
-<!-- MDUI -->
+<script src="https://unpkg.com/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script src="https://unpkg.com/mdui@2.1.4/mdui.global.js"></script>
-<!-- Dialog -->
+<script src="assets/js/main.js"></script>
 <script>
     const dialog_tips = document.querySelector("#tips")
     const openButton_tips = document.querySelector("#top-bar .tips")
@@ -351,9 +354,10 @@
     openButton_update.addEventListener("click", () => dialog_update.open = true)
     openButton_version.addEventListener("click", () => dialog_update.open = true)
 </script>
-<script src="assets/js/main.js"></script>
-<!-- Open WeChat -->
-<script type="text/javascript">
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector("#currentYear").textContent = new Date().getFullYear()
+    })
     function weixin(e) {
         e.preventDefault()
         const n = "暮光工作室"
