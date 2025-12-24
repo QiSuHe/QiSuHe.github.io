@@ -116,6 +116,7 @@ function generateQRcode(url, ele, color) {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|Opera Mini|Mobile/i.test(navigator.userAgent)
     const qrcode = ele.querySelector(".qrcode")
     qrcode.innerHTML = ""
+    ele.disabled = true
 
     try {
         new QRCode(qrcode, {
@@ -137,7 +138,7 @@ function generateQRcode(url, ele, color) {
             image.style.width = "144px"
             image.style.height = "144px"
         }
-        if (!canvas || isMobile) ele.disabled = true
+        if (canvas && !isMobile) ele.disabled = false
     }, 321)
 }
 
