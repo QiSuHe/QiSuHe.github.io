@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    initAppTheme()
-    initCounters()
     initBackToTop()
+    initCounters()
+    initAppTheme()
+    initQRcode()
 })
 
 
@@ -14,7 +15,7 @@ function initCounters() {
                 const counter = entry.target
                 const target = parseInt(counter.getAttribute("data-target"))
                 const isPercentage = counter.getAttribute("data-stat") == "rate"
-                const duration = 1500
+                const duration = 999
                 const increment = target / (duration / 16)
 
                 let current = 0
@@ -108,3 +109,73 @@ function initAppTheme() {
         })
     })
 }
+
+
+/* 生成二维码 */
+function generateQRcode(url, ele, color) {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|Opera Mini|Mobile/i.test(navigator.userAgent)
+    const qrcode = ele.querySelector(".qrcode")
+    qrcode.innerHTML = ""
+
+    try {
+        new QRCode(qrcode, {
+            text: url.href,
+            width: 666,
+            height: 666,
+            colorDark: color,
+            colorLight: "rgba(0,0,0,0)",
+            correctLevel: QRCode.CorrectLevel.L,
+        })
+    } catch (err) {
+        console.error(err)
+    }
+
+    setTimeout(() => {
+        const canvas = qrcode.querySelector("canvas")
+        const image = qrcode.querySelector("canvas+img")
+        if (image) {
+            image.style.width = "144px"
+            image.style.height = "144px"
+        }
+        if (!canvas || isMobile) ele.disabled = true
+    }, 321)
+}
+
+function getqrcodeColor() {
+    const isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    if (mdui.getTheme() == "dark") {
+        return "#ffffff"
+    } else if (mdui.getTheme() == "auto" && isDark) {
+        return "#ffffff"
+    } else {
+        return "#000000"
+    }
+}
+
+function initQRcode() {
+    const download_url = document.querySelector("a#download")
+    const download_tips = document.querySelector("mdui-tooltip:has(#download)")
+    if (download_url && download_tips) generateQRcode(download_url, download_tips, getqrcodeColor())
+
+    const releases_url = document.querySelector("a#releases")
+    const releases_tips = document.querySelector("mdui-tooltip:has(#releases)")
+    if (releases_url && releases_tips) generateQRcode(releases_url, releases_tips, getqrcodeColor())
+}
+
+window.matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+        initQRcode()
+    })
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach(m => {
+        if (m.attributeName == "class") {
+            initQRcode()
+        }
+    })
+})
+
+observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"]
+})
