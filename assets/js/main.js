@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     initAppVersion()
     initBackToTop()
+    initLanguage()
     initCounters()
     initAppTheme()
     initQRcode()
@@ -87,24 +88,22 @@ function initBackToTop() {
 
 /* 主题模式 */
 function initAppTheme() {
-    const themeModeItem = document.querySelectorAll("#top-bar .mode .item")
-    const themeModeIcon = document.querySelector("#top-bar .icon")
-    const themeMode = document.querySelector("#top-bar .mode")
-    let nowTheme = localStorage.getItem("theme")
+    const themeModeItem = document.querySelectorAll("#top-bar .theme .item")
+    const themeModeIcon = document.querySelector("#top-bar .mode")
+    const themeMode = document.querySelector("#top-bar .theme")
+    let nowTheme = localStorage.getItem("theme") || "auto"
 
-    if (!nowTheme || nowTheme == "auto") {
-        mdui.setTheme("auto")
-        localStorage.setItem("theme", "auto")
-        themeModeIcon.icon = "contrast--outlined"
+    if (nowTheme == "light") {
+        themeModeIcon.icon = "light_mode--outlined"
+    } else if (nowTheme == "dark") {
+        themeModeIcon.icon = "dark_mode--outlined"
     } else {
-        mdui.setTheme(nowTheme)
-        localStorage.setItem("theme", nowTheme)
-        if (nowTheme == "light") {
-            themeModeIcon.icon = "light_mode--outlined"
-        } else if (nowTheme == "dark") {
-            themeModeIcon.icon = "dark_mode--outlined"
-        }
+        themeModeIcon.icon = "contrast--outlined"
     }
+
+    mdui.setTheme(nowTheme)
+    themeMode.value = nowTheme
+    localStorage.setItem("theme", nowTheme)
 
     themeModeItem.forEach(item => {
         item.addEventListener("click", (e) => {
@@ -123,6 +122,59 @@ function initAppTheme() {
             } else {
                 themeModeIcon.icon = "contrast--outlined"
             }
+        })
+    })
+}
+
+
+/* 显示语言 */
+function getSystemLanguage() {
+    const lang = (navigator.language || navigator.userLanguage || "zh").toLowerCase()
+    if (lang.startsWith("zh")) {
+        return "zh-cn"
+    }
+    return "en-us"
+}
+
+function applyLocale(locale) {
+    if (locale == "auto") {
+        locale = getSystemLanguage()
+    }
+    const data = i18n[locale]
+    if (data) {
+        document.title = data.title
+        const description = document.querySelector("meta[name='description']")
+        if (description) {
+            description.setAttribute("content", data.description)
+        }
+        document.querySelectorAll("[data-i18n]").forEach(ele => {
+            const key = ele.getAttribute("data-i18n")
+            if (data[key]) {
+                ele.textContent = data[key]
+            }
+        })
+    }
+}
+
+function initLanguage() {
+    const localeItem = document.querySelectorAll("#top-bar .locale .item")
+    const localeMode = document.querySelector("#top-bar .locale")
+    let nowLocale = localStorage.getItem("locale") || "auto"
+
+    localeMode.value = nowLocale
+    localStorage.setItem("locale", nowLocale)
+    applyLocale(nowLocale)
+
+    localeItem.forEach(item => {
+        item.addEventListener("click", (e) => {
+            if (item.hasAttribute("selected")) {
+                e.preventDefault()
+                e.stopPropagation()
+                return
+            }
+            nowLocale = e.currentTarget.getAttribute("value")
+            localStorage.setItem("locale", nowLocale)
+            applyLocale(nowLocale)
         })
     })
 }
@@ -298,7 +350,7 @@ function initAppVersion() {
             const p = document.querySelector("#preloader")
             if (p) p.remove()
         }, 321)
-        document.querySelector("main .app-desc").textContent = `${data.tag_name} | ${bytesToMiB(data.assets[0].size)}MB | ${data.published_at.split("T")[0]}` || "科技便携生活"
+        document.querySelector("main .app-desc").textContent = `${data.tag_name} | ${bytesToMiB(data.assets[0].size)}MB | ${data.published_at.split("T")[0]}` || "Technology for a Convenient Life"
         document.querySelector("#download").href = `https://gh-proxy.org/${data.assets[0].browser_download_url}` || "https://www.123pan.com/s/ikkrVv-jpVQh"
         document.querySelector("#update .app-logs").innerHTML = normalizeBody(data.body) || "修复了一些已知问题"
         initQRcode()
