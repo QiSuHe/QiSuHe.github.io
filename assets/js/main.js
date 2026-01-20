@@ -137,9 +137,6 @@ function getSystemLanguage() {
 }
 
 function applyLocale(locale) {
-    if (locale == "auto") {
-        locale = getSystemLanguage()
-    }
     const data = i18n[locale]
     if (data) {
         document.title = data.title
@@ -159,7 +156,7 @@ function applyLocale(locale) {
 function initLanguage() {
     const localeItem = document.querySelectorAll("#top-bar .locale .item")
     const localeMode = document.querySelector("#top-bar .locale")
-    let nowLocale = localStorage.getItem("locale") || "auto"
+    let nowLocale = localStorage.getItem("locale") || getSystemLanguage() || "zh-cn"
 
     localeMode.value = nowLocale
     localStorage.setItem("locale", nowLocale)
@@ -357,4 +354,5 @@ function initAppVersion() {
     }
 
     init()
+
 }
