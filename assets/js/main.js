@@ -238,8 +238,8 @@ window.matchMedia("(prefers-color-scheme: dark)")
 /* 获取应用版本 */
 function initAppVersion() {
     const CACHE_KEY = "release"
-    const CACHE_TTL = 10 * 60 * 1000
-    const FETCH_TIMEOUT = 10 * 1000
+    const CACHE_TTL = 15 * 60 * 1000
+    const FETCH_TIMEOUT = 15 * 1000
 
     const API_URL = "https://api.github.com/repos/qisuhe/qisuhe.github.io/releases/latest"
 
